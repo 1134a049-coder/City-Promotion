@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11/11 品牌課堂深度解析 ＆ 東京（Tokyo）城市品牌高分策略指南</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-page: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-warm: #FFFBEB;
+      --bg-danger: #FEF2F2;
+      --bg-success: #ECFDF5;
+      --bg-indigo: #EEF2FF;
+
+      --text-main: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+
+      --brand-primary: #E11D48;
+      --brand-primary-dark: #BE123C;
+      --brand-indigo: #4F46E5;
+      --brand-gold: #D97706;
+      --brand-emerald: #059669;
+      --brand-slate: #1E293B;
+
+      --border-light: #E2E8F0;
+      --border-strong: #CBD5E1;
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 22px;
+
+      --font-sans: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+
+    .logo-badge {
+      background: linear-gradient(135deg, var(--brand-primary), #9F1239);
+      color: #fff;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 13px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    .logo-text {
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .logo-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: nowrap;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      background: var(--bg-subtle);
+      border: 1.5px solid var(--border-strong);
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 999px;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-link:hover {
+      background: #E2E8F0;
+      border-color: #94A3B8;
+      color: var(--text-main);
+    }
+
+    /* 滑動到對應區域時：外框與底色由淺色變為畫面中的深色 */
+    .nav-link.active {
+      background: var(--brand-slate);
+      border-color: #0F172A;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.24);
+      transform: translateY(-1px);
+    }
+
+    /* 區域滑動連動提示條 */
+    .scroll-status-bar {
+      background: #F1F5F9;
+      border-bottom: 1px solid var(--border-light);
+      padding: 6px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .scroll-status-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .scroll-indicator-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scroll-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.2);
+    }
+
+    .scroll-progress-track {
+      width: 160px;
+      height: 6px;
+      background: #CBD5E1;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .scroll-progress-fill {
+      height: 100%;
+      width: 25%;
+      background: var(--brand-slate);
+      border-radius: 99px;
+      transition: width 0.2s ease;
+    }
+
+    /* 區塊化容器與滑動連動高亮 */
+    .main-wrap > section {
+      background: var(--bg-surface);
+      border: 2px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.28s ease, box-shadow 0.28s ease;
+      position: relative;
+    }
+
+    .main-wrap > section.section-active {
+      border-color: var(--brand-slate);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 52%, #31102F 100%);
+      color: #FFFFFF;
+      padding: 56px 24px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #F8FAFC;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hero-pill.crimson {
+      background: rgba(225, 29, 72, 0.28);
+      border-color: rgba(251, 113, 133, 0.5);
+      color: #FFE4E6;
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 3.4vw, 40px);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span.highlight {
+      color: #FDA4AF;
+      text-decoration: underline;
+      text-decoration-color: rgba(225, 29, 72, 0.7);
+      text-underline-offset: 6px;
+    }
+
+    .hero-desc {
+      font-size: 15.5px;
+      color: #CBD5E1;
+      margin-bottom: 24px;
+      max-width: 680px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .stat-label {
+      font-size: 12.5px;
+      color: #94A3B8;
+      margin-top: 2px;
+    }
+
+    .verdict-card {
+      background: #FFFFFF;
+      color: var(--text-main);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      border: 2px solid #FDA4AF;
+    }
+
+    .verdict-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .verdict-badge {
+      background: var(--brand-primary);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .verdict-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .verdict-body {
+      font-size: 14px;
+      color: var(--text-secondary);
+      background: var(--bg-subtle);
+      padding: 14px;
+      border-radius: 10px;
+      border-left: 4px solid var(--brand-primary);
+      margin-bottom: 14px;
+    }
+
+    .verdict-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13.5px;
+    }
+
+    .verdict-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-weight: 600;
+    }
+
+    .main-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .sec-head {
+      margin-bottom: 28px;
+    }
+
+    .sec-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-primary);
+      background: #FFE4E6;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .sec-title {
+      font-size: clamp(22px, 2.5vw, 30px);
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .sec-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .strat-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--border-light);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .strat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .strat-card.bad { border-top: 6px solid #EF4444; }
+    .strat-card.warn { border-top: 6px solid #F59E0B; }
+    .strat-card.best {
+      border: 2.5px solid var(--brand-emerald);
+      border-top: 8px solid var(--brand-emerald);
+      background: linear-gradient(180deg, #ECFDF5 0%, #FFFFFF 28%);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .strat-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      width: fit-content;
+    }
+
+    .strat-card.bad .strat-tag { background: #FEE2E2; color: #B91C1C; }
+    .strat-card.warn .strat-tag { background: #FEF3C7; color: #B45309; }
+    .strat-card.best .strat-tag { background: #D1FAE5; color: #047857; }
+
+    .strat-card h3 {
+      font-size: 19px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .strat-example {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border-strong);
+    }
+
+    .strat-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    .strat-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .case-proof {
+      background: var(--bg-subtle);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-left: 3px solid var(--brand-slate);
+    }
+
+    .strat-card.best .case-proof {
+      background: #ECFDF5;
+      border-left-color: var(--brand-emerald);
+      color: #065F46;
+      font-weight: 600;
+    }
+
+    .blueprint-box {
+      background: var(--bg-surface);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .bp-header {
+      background: linear-gradient(90deg, #0F172A 0%, #1E293B 100%);
+      color: #fff;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .bp-header h3 {
+      font-size: 21px;
+      font-weight: 900;
+    }
+
+    .bp-slogan {
+      background: rgba(225, 29, 72, 0.25);
+      border: 1px solid #FB7185;
+      color: #FFE4E6;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+
+    .bp-body {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .gears-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gear-card {
+      background: var(--bg-page);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      position: relative;
+    }
+
+    .gear-era {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .gear-card.past .gear-era { background: #FEF3C7; color: #92400E; }
+    .gear-card.present .gear-era { background: #FFE4E6; color: #BE123C; }
+    .gear-card.future .gear-era { background: #E0E7FF; color: #3730A3; }
+
+    .gear-card h4 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .gear-spots {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-primary);
+      margin-bottom: 10px;
+    }
+
+    .gear-desc {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    .stp-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .stp-panel {
+      background: var(--bg-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border-light);
+    }
+
+    .stp-panel h4 {
+      font-size: 16.5px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .seg-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .seg-item {
+      background: #fff;
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .seg-item.selected {
+      border: 2px solid var(--brand-primary);
+      background: #FFF1F2;
+      font-weight: 700;
+      color: #881337;
+    }
+
+    .seg-status {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 99px;
+      background: #E2E8F0;
+      color: #475569;
+    }
+
+    .seg-item.selected .seg-status {
+      background: var(--brand-primary);
+      color: #fff;
+    }
+
+    .pmap-section {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      background: #F8FAFC;
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+
+    .pmap-canvas {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #FFFFFF;
+      border: 2px solid #CBD5E1;
+      border-radius: 12px;
+      box-shadow: inset 0 2px 8px rgba(15, 23, 42, 0.04);
+      overflow: hidden;
+    }
+
+    .quad-tr {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      background: linear-gradient(135deg, rgba(254, 226, 226, 0.25), rgba(254, 205, 211, 0.55));
+      border-bottom: 1px dashed rgba(225, 29, 72, 0.2);
+      border-left: 1px dashed rgba(225, 29, 72, 0.2);
+    }
+
+    .quad-label {
+      position: absolute;
+      font-size: 11px;
+      font-weight: 800;
+      color: #94A3B8;
+      padding: 8px 10px;
+      pointer-events: none;
+    }
+    .quad-label.tl { top: 6px; left: 8px; }
+    .quad-label.tr { top: 6px; right: 8px; color: var(--brand-primary); }
+    .quad-label.bl { bottom: 6px; left: 8px; }
+    .quad-label.br { bottom: 6px; right: 8px; }
+
+    .axis-x {
+      position: absolute;
+      top: 50%;
+      left: 4%;
+      right: 4%;
+      height: 2px;
+      background: #334155;
+      transform: translateY(-50%);
+    }
+
+    .axis-y {
+      position: absolute;
+      left: 50%;
+      top: 5%;
+      bottom: 5%;
+      width: 2px;
+      background: #334155;
+      transform: translateX(-50%);
+    }
+
+    .axis-tag {
+      position: absolute;
+      background: #0F172A;
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+      z-index: 4;
+    }
+
+    .axis-tag.top { top: 8px; left: 50%; transform: translateX(-50%); }
+    .axis-tag.bottom { bottom: 8px; left: 50%; transform: translateX(-50%); background: #64748B; }
+    .axis-tag.right { right: 8px; top: 50%; transform: translateY(-50%); }
+    .axis-tag.left { left: 8px; top: 50%; transform: translateY(-50%); background: #64748B; }
+
+    .city-node {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      transition: transform 0.2s ease;
+    }
+
+    .city-node:hover {
+      transform: translate(-50%, -50%) scale(1.12);
+      z-index: 20;
+    }
+
+    .node-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #475569;
+      border: 3px solid #fff;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.22);
+    }
+
+    .node-name {
+      margin-top: 4px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #CBD5E1;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--text-main);
+      white-space: nowrap;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .city-node.tokyo .node-dot {
+      width: 28px;
+      height: 28px;
+      background: var(--brand-primary);
+      box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.22), 0 4px 12px rgba(225, 29, 72, 0.45);
+    }
+
+    .city-node.tokyo .node-name {
+      background: var(--brand-primary);
+      color: #fff;
+      border-color: var(--brand-primary);
+      font-size: 13px;
+    }
+
+    .city-node.active .node-dot {
+      outline: 3px solid var(--brand-indigo);
+      outline-offset: 2px;
+    }
+
+    .pmap-info {
+      background: #FFFFFF;
+      border-radius: var(--radius-md);
+      padding: 22px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pmap-info-badge {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-indigo);
+      background: var(--bg-indigo);
+      padding: 3px 10px;
+      border-radius: 99px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .pmap-info h4 {
+      font-size: 19px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .pmap-info p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .city-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .city-chip-btn {
+      border: 1px solid var(--border-strong);
+      background: var(--bg-page);
+      color: var(--text-secondary);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .city-chip-btn.active, .city-chip-btn:hover {
+      background: var(--brand-slate);
+      color: #fff;
+      border-color: var(--brand-slate);
+    }
+
+    .shoes-callout {
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+      border: 1.5px solid #F59E0B;
+      border-radius: var(--radius-md);
+      padding: 22px 26px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .shoes-icon {
+      font-size: 34px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .shoes-callout h4 {
+      font-size: 16.5px;
+      font-weight: 900;
+      color: #92400E;
+      margin-bottom: 6px;
+    }
+
+    .shoes-callout p {
+      font-size: 14px;
+      color: #78350F;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .rule-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-left: 5px solid var(--brand-indigo);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .rule-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-indigo);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .rule-card h4 {
+      font-size: 17px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .rule-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .six-shoes-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .shoe-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .shoe-emoji { font-size: 28px; margin-bottom: 6px; }
+    .shoe-city { font-size: 14px; font-weight: 900; color: var(--text-main); }
+    .shoe-type { font-size: 13px; font-weight: 800; color: var(--brand-primary); margin: 2px 0 6px; }
+    .shoe-desc { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      background: var(--bg-surface);
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .filter-btn {
+      border: 1px solid var(--border-light);
+      background: var(--bg-page);
+      color: var(--text-secondary);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--brand-primary);
+      color: #fff;
+      border-color: var(--brand-primary);
+    }
+
+    .search-input {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      font-size: 13.5px;
+      font-family: inherit;
+      min-width: 240px;
+    }
+
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .group-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .group-card.star-case {
+      border: 2px solid #F59E0B;
+      background: linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 35%);
+    }
+
+    .group-card.model-case {
+      border: 2px solid var(--brand-emerald);
+      background: linear-gradient(180deg, #ECFDF5 0%, #FFFFFF 35%);
+    }
+
+    .group-card.trap-case {
+      border: 2px solid #EF4444;
+      background: linear-gradient(180deg, #FEF2F2 0%, #FFFFFF 35%);
+    }
+
+    .gc-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .gc-id {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: var(--bg-subtle);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    .gc-badge {
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 99px;
+    }
+
+    .badge-star { background: #FEF3C7; color: #B45309; }
+    .badge-model { background: #D1FAE5; color: #047857; }
+    .badge-trap { background: #FEE2E2; color: #B91C1C; }
+    .badge-normal { background: #F1F5F9; color: #475569; }
+
+    .gc-title { font-size: 18px; font-weight: 900; color: var(--text-main); }
+    .gc-summary { font-size: 13.5px; color: var(--text-secondary); }
+
+    .gc-feedback {
+      background: var(--bg-subtle);
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-main);
+      border-left: 3.5px solid var(--brand-primary);
+      margin-top: auto;
+    }
+
+    .gc-feedback strong { color: var(--brand-primary-dark); }
+
+    footer {
+      background: #0F172A;
+      color: #94A3B8;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-container, .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero-inner, .strategy-grid, .gears-grid, .stp-row, .pmap-section, .rules-grid, .groups-grid {
+        grid-template-columns: 1fr;
+      }
+      .six-shoes-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-badge">11/11 品牌課</span>
+        <div>
+          <span class="logo-text">城市品牌行銷 STP ＆ 東京高分策略指南</span>
+          <span class="logo-sub">11-11課堂錄音全解析（150分鐘）｜第 16～30 組下週報告必勝藍圖</span>
+        </div>
+      </a>
+      <div class="nav-links" id="topNavLinks">
+        <a href="#tokyo-decision" class="nav-link active" data-section="tokyo-decision" data-label="STEP 01 · 🎯 東京決策：單一區域 vs 全城">🎯 東京決策：單一區域 vs 全城</a>
+        <a href="#tokyo-blueprint" class="nav-link" data-section="tokyo-blueprint" data-label="STEP 02 · 🗼 東京 STP 與定位圖">🗼 東京 STP 與定位圖</a>
+        <a href="#prof-rules" class="nav-link" data-section="prof-rules" data-label="STEP 03 · 🔥 老師 4 大評分鐵律">🔥 老師 4 大評分鐵律</a>
+        <a href="#groups-review" class="nav-link" data-section="groups-review" data-label="STEP 04 · 📋 第 1～15 組講評紀錄">📋 第 1～15 組講評紀錄</a>
+      </div>
+    </div>
+    <div class="scroll-status-bar">
+      <div class="scroll-status-inner">
+        <div class="scroll-indicator-badge">
+          <span class="scroll-dot"></span>
+          <span id="currentSectionHint">目前閱讀區塊：STEP 01 · 🎯 東京決策：單一區域 vs 全城</span>
+        </div>
+        <div class="scroll-progress-track" title="區塊閱讀進度">
+          <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag-row">
+          <span class="hero-pill crimson">📌 下週第 16～30 組上台必看</span>
+          <span class="hero-pill">🎙️ 11/11 課堂錄音 100% 完整萃取</span>
+        </div>
+        <h1>介紹「東京 Tokyo」：<br>該選<span class="highlight">單一區域</span>，還是<span class="highlight">把全城特色列出</span>？</h1>
+        <p class="hero-desc">
+          根據老師在 11/11 課堂對前 15 組的即時拷問（特別是第 3 組熊本、第 5 組屏東 vs 墾丁、第 10 組高雄、第 12 組台南、第 13 組台北被抓包），「全城流水帳」與「單一狹小街區」都會失分！本頁為您整合<strong>老師評分公式</strong>與<strong>東京滿分簡報架構</strong>。
+        </p>
+        <div class="hero-stats">
+          <div class="stat-box">
+            <div class="stat-num">15 組</div>
+            <div class="stat-label">前段報告與即時拷問案例</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">只選 1 個</div>
+            <div class="stat-label">STP 規定鎖定之核心客群</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">100% 連動</div>
+            <div class="stat-label">目標客群痛點 × 定位圖兩軸</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-header">
+          <span class="verdict-badge">⚡ 最佳高分結論（方案 C）</span>
+          <span style="font-size:12px; color:#64748B; font-weight:700;">課堂實證最穩策略</span>
+        </div>
+        <div class="verdict-title">
+          以「整個東京」為城市品牌母體，但用「單一核心定位主軸」精選 3 個代表區域作為證據！
+        </div>
+        <div class="verdict-body">
+          老師在 <code>113:16</code> 明確規定：<strong>「你不是當市長！做課業報告只能鎖定『單一目標客群』與『單一主軸』，這樣後面的二維知覺定位圖才不會精神分裂！」</strong>
+        </div>
+        <ul class="verdict-list">
+          <li><span>❌</span> <span><strong>不把全東京景點流水帳列出</strong>（避免像第 13 組台北被抽問細節當場卡住，且定位圖座標軸會前後矛盾）。</span></li>
+          <li><span>⚠️</span> <span><strong>不只縮在單一狹小街區</strong>（避免像第 5 組討論單做墾丁範圍太小，無法跟首爾、京都、新加坡同台比較）。</span></li>
+          <li><span>✅</span> <span><strong>鎖定「時空折疊：江戶底蘊 × 前衛次文化與設計」</strong>，只挑 <strong>淺草藏前、澀谷秋葉原、六本木麻布台</strong> 3 區代表全東京！</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-wrap">
+
+    <section id="tokyo-decision">
+      <div class="sec-head">
+        <span class="sec-eyebrow">STEP 01 · STRATEGIC DECISION</span>
+        <h2 class="sec-title">為什麼「方案 C（全城定錨 ＋ 3 大代表區域收斂）」是唯一滿分策略？</h2>
+        <p class="sec-subtitle">直接對照 11/11 課堂上第 5 組、第 10 組、第 12 組、第 13 組的真實講評結果</p>
+      </div>
+
+      <div class="strategy-grid">
+        <div class="strat-card bad">
+          <div>
+            <span class="strat-tag">❌ 方案 A｜絕對大忌</span>
+            <h3>把整個東京的知名景點全部列出（流水帳大雜燴）</h3>
+            <p class="strat-example">做法：把淺草、晴空塔、東京鐵塔、澀谷、新宿、秋葉原、銀座、上野、台場、迪士尼全部塞進簡報。</p>
+            <ul class="strat-points">
+              <li><span>💥</span> <span><strong>定位圖必精神分裂</strong>：前面既講古蹟、又講動漫、又講金融商務，後面畫二維定位圖時，根本選不出一致的 X 軸與 Y 軸（重蹈第 3 組熊本、第 11 組桃園覆轍）。</span></li>
+              <li><span>💥</span> <span><strong>極易被老師抽問抓包</strong>：景點列越多越像旅遊手冊，老師隨便抽問一個地標細節答不出就會當場破功。</span></li>
+            </ul>
+          </div>
+          <div class="case-proof">
+            <strong>📌 課堂真實反面教材（第 13 組台北）：</strong><br>
+            把華山文創、夜市、101、北車、西門町全列出，結果老師當場打斷問：<em>「請問華山文創園區的捷運站叫什麼名字？」</em>報告者答不出來（實為忠孝新生站）。
+          </div>
+        </div>
+
+        <div class="strat-card warn">
+          <div>
+            <span class="strat-tag">⚠️ 方案 B｜格局受限</span>
+            <h3>只單純介紹東京的「單一狹小行政區／商圈」</h3>
+            <p class="strat-example">做法：整份報告只介紹「淺草區」或只介紹「下北澤商圈」。</p>
+            <ul class="strat-points">
+              <li><span>⚠️</span> <span><strong>變成商圈導覽而非城市品牌</strong>：課程要求是「City Branding（城市品牌行銷）」，只講單一街區會讓內部資源盤點過於單薄。</span></li>
+              <li><span>⚠️</span> <span><strong>外部競爭城市難以對決</strong>：後面畫知覺定位圖時，「淺草」很難直接跟「首爾、新加坡、香港、大阪」等國際大城放在同一個量級比較。</span></li>
+            </ul>
+          </div>
+          <div class="case-proof">
+            <strong>📌 課堂真實問答（第 5 組屏東 vs 墾丁，30:03）：</strong><br>
+            台下提問：<em>「為什麼不單純做墾丁？」</em>組員回答：<em>「因為單做墾丁範圍太小，能講的元素就只有海邊那些而已。」</em>
+          </div>
+        </div>
+
+        <div class="strat-card best">
+          <div>
+            <span class="strat-tag">🌟 方案 C｜老師最愛滿分解法</span>
+            <h3>以「東京」為品牌母體，用單一主軸串聯 3 大代表區域</h3>
+            <p class="strat-example">做法：維持「東京」國際大城格局，但鎖定「新舊時空折疊」單一核心主軸，只挑 3 個代表區域當證據，其餘全數捨棄！</p>
+            <ul class="strat-points">
+              <li><span>✅</span> <span><strong>完美符合老師「只選一樣」鐵律</strong>：目標客群精準鎖定「追求傳統底蘊 × 前衛潮流的年輕深度自由行旅客」。</span></li>
+              <li><span>✅</span> <span><strong>定位圖穩居右上角黃金象限</strong>：可用「百年傳統底蘊」打敗首爾／新加坡，再用「前衛次文化與當代設計」打敗京都！</span></li>
+            </ul>
+          </div>
+          <div class="case-proof">
+            <strong>📌 課堂真實滿分典範（第 10 組高雄 ＆ 第 12 組台南）：</strong><br>
+            第 10 組做高雄只聚焦「演唱會經濟＋港灣文創過夜」；第 12 組做台南只聚焦「五條港古水道與街巷演變」，完全不列無關景點！
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokyo-blueprint">
+      <div class="sec-head">
+        <span class="sec-eyebrow">STEP 02 · TOKYO PRESENTATION BLUEPRINT</span>
+        <h2 class="sec-title">東京（Tokyo）城市品牌實戰高分架構（可直接套用至下週簡報）</h2>
+        <p class="sec-subtitle">依照老師規定的 4 大報告步驟：內部資源盤點 ➔ STP 單一客群鎖定 ➔ 二維知覺定位圖 ➔ 微觀視覺觀察</p>
+      </div>
+
+      <div class="blueprint-box">
+        <div class="bp-header">
+          <div>
+            <div style="font-size:12px; color:#94A3B8; font-weight:700; margin-bottom:4px;">BRAND CORE POSITIONING · 一句話定義東京</div>
+            <h3>東京 Tokyo：時空折疊的極致混種之都</h3>
+          </div>
+          <span class="bp-slogan">400 年江戶職人底蘊 × 世界最前衛次文化與當代設計，在山手線 30 分鐘內無縫切換</span>
+        </div>
+
+        <div class="bp-body">
+          <div>
+            <h4 style="font-size:17px; font-weight:900; margin-bottom:14px;">
+              1️⃣ 內部資源盤點（Internal Resources）：拒絕流水帳，用「過去・現在・未來」3 大區域切面代表全東京
+            </h4>
+            <div class="gears-grid">
+              <div class="gear-card past">
+                <span class="gear-era">PAST · 過去（江戶下町底蘊）</span>
+                <h4>淺草・藏前（Asakusa & Kuramae）</h4>
+                <div class="gear-spots">📍 雷門淺草寺、三社祭、藏前職人街區</div>
+                <p class="gear-desc">
+                  保留 400 年江戶庶民信仰與百年老舖，緊鄰被譽為「東京布魯克林」的藏前——將傳統倉庫與金屬皮革工藝轉化為獨立咖啡館與職人選物店，展現老城區有機活化。
+                </p>
+              </div>
+              <div class="gear-card present">
+                <span class="gear-era">PRESENT · 現在（次文化與青年潮流心臟）</span>
+                <h4>澀谷・原宿・秋葉原（Shibuya & Akihabara）</h4>
+                <div class="gear-spots">📍 澀谷十字路口、裏原宿街頭潮流、秋葉原動漫 IP</div>
+                <p class="gear-desc">
+                  每綠燈 3,000 人同時穿越卻井然有序的澀谷十字路口（高密度秩序美學），結合全球最強大的動漫電玩 IP 朝聖地與亞洲街頭穿搭發源地。
+                </p>
+              </div>
+              <div class="gear-card future">
+                <span class="gear-era">FUTURE · 未來（當代建築美學與數位藝術）</span>
+                <h4>六本木・麻布台之丘／豐洲（Roppongi & Azabudai）</h4>
+                <div class="gear-spots">📍 麻布台之丘、21_21 DESIGN SIGHT、teamLab</div>
+                <p class="gear-desc">
+                  匯聚安藤忠雄、隈研吾、Heatherwick 等世界建築大師作品，以及 teamLab 無界沉浸式數位藝術，將科技、都市綠化與美學展覽融入市民日常。
+                </p>
+              </div>
+            </div>
+            <div style="margin-top:14px; background:#F1F5F9; padding:12px 16px; border-radius:10px; font-size:13.5px; color:#334155;">
+              <strong>🚇 軟硬體基礎建設與微觀文化亮點（呼應老師五大支柱）：</strong>
+              硬體具備全球最高密度且精準至秒的 JR 山手線與地鐵路網、完善的清楚指標；軟體則是令外國遊客驚嘆（WOW）的<strong>「世界最繁華卻最安靜整潔的電車秩序與排隊文明」</strong>。
+            </div>
+          </div>
+
+          <div class="stp-row">
+            <div class="stp-panel">
+              <h4>2️⃣ S（市場區隔 Segmentation）：先列 4 類受眾</h4>
+              <div class="seg-chips">
+                <div class="seg-item">
+                  <span>① 跨國企業總部與金融商務客（丸之內／品川）</span>
+                  <span class="seg-status">不選</span>
+                </div>
+                <div class="seg-item">
+                  <span>② 傳統走馬看花跟團長輩與樂園親子客</span>
+                  <span class="seg-status">不選</span>
+                </div>
+                <div class="seg-item">
+                  <span>③ 跨國科技研發與外籍留學移居人才</span>
+                  <span class="seg-status">不選</span>
+                </div>
+                <div class="seg-item selected">
+                  <span>④ 渴望「傳統底蘊 × 前衛潮流／設計美學」的 20–35 歲國際深度自由行世代</span>
+                  <span class="seg-status">🎯 唯一鎖定 Target</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stp-panel" style="background:#FFF1F2; border-color:#FECDD3;">
+              <h4 style="color:#9F1239;">3️⃣ T（目標市場選擇 Targeting）：為什麼只選這群人？</h4>
+              <p style="font-size:14px; color:#881337; margin-bottom:12px;">
+                完全遵循老師鐵律：<strong>「課業報告只選一個目標客群，並由此推導定位圖的兩個座標軸！」</strong>
+              </p>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:#881337;">
+                <li>✅ <strong>痛點維度 X 軸</strong>：這群年輕深度自由行旅客極度看重<strong>「前衛潮流、動漫次文化與當代設計展演動能」</strong>。</li>
+                <li>✅ <strong>痛點維度 Y 軸</strong>：同時他們不滿足於純現代水泥叢林，渴望體驗<strong>「百年歷史街區底蘊與職人生活美學」</strong>。</li>
+                <li>🎯 <strong>完美擊敗競品（套用老師熊本打敗京都公式）</strong>：單比古蹟歷史，東京面對強敵<strong>京都</strong>；但把「前衛潮流與次文化設計」放入橫軸後，東京直接躍居<strong>右上角黃金象限</strong>！</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h4 style="font-size:17px; font-weight:900; margin-bottom:14px;">
+              4️⃣ P（品牌定位與互動式二維知覺定位圖 Perceptual Map）—— 點擊下方城市節點查看對決分析
+            </h4>
+            <div class="pmap-section">
+              <div class="pmap-canvas">
+                <div class="quad-tr"></div>
+                <div class="quad-label tl">左上：古都文化深厚，但現代潮流較弱</div>
+                <div class="quad-label tr">🌟 右上黃金象限：百年底蘊 × 前衛潮流兼具</div>
+                <div class="quad-label bl">左下：雙軸動能偏弱</div>
+                <div class="quad-label br">右下：現代娛樂／商業強，但傳統街區較少</div>
+
+                <div class="axis-x"></div>
+                <div class="axis-y"></div>
+
+                <div class="axis-tag top">▲ 百年歷史底蘊與職人生活美學（深）</div>
+                <div class="axis-tag bottom">▼ 百年歷史底蘊與職人生活美學（淺）</div>
+                <div class="axis-tag right">前衛潮流・次文化與設計動能（高） ▶</div>
+                <div class="axis-tag left">◀ 潮流與次文化（低）</div>
+
+                <div class="city-node tokyo active" style="left: 82%; top: 22%;" onclick="selectCity('tokyo', this)">
+                  <div class="node-dot"></div>
+                  <div class="node-name">🗼 東京 Tokyo</div>
+                </div>
+
+                <div class="city-node" style="left: 26%; top: 16%;" onclick="selectCity('kyoto', this)">
+                  <div class="node-dot" style="background:#7C3AED;"></div>
+                  <div class="node-name">⛩️ 京都 Kyoto</div>
+                </div>
+
+                <div class="city-node" style="left: 78%; top: 68%;" onclick="selectCity('seoul', this)">
+                  <div class="node-dot" style="background:#0284C7;"></div>
+                  <div class="node-name">🎧 首爾 Seoul</div>
+                </div>
+
+                <div class="city-node" style="left: 62%; top: 76%;" onclick="selectCity('singapore', this)">
+                  <div class="node-dot" style="background:#0D9488;"></div>
+                  <div class="node-name">🦁 新加坡 Singapore</div>
+                </div>
+
+                <div class="city-node" style="left: 60%; top: 44%;" onclick="selectCity('osaka', this)">
+                  <div class="node-dot" style="background:#EA580C;"></div>
+                  <div class="node-name">🐙 大阪 Osaka</div>
+                </div>
+              </div>
+
+              <div class="pmap-info">
+                <span class="pmap-info-badge" id="pmap-badge">🌟 右上角黃金象限（我們的主角）</span>
+                <h4 id="pmap-title">🗼 東京 Tokyo（時空折疊之都）</h4>
+                <p id="pmap-desc">
+                  唯一能讓 20–35 歲深度自由行旅客「早上在淺草藏前體驗百年雷門祭典與職人手作、下午在澀谷秋葉原沉浸世界級動漫 IP 與街頭潮流、晚上在麻布台之丘看安藤忠雄／隈研吾建築與數位藝術」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！
+                </p>
+                <div style="font-size:12.5px; color:#64748B; font-weight:700;">👇 點擊切換查看各競爭城市為何落後東京：</div>
+                <div class="city-btn-row">
+                  <button class="city-chip-btn active" onclick="selectCityByBtn('tokyo', 0)">🗼 東京 Tokyo</button>
+                  <button class="city-chip-btn" onclick="selectCityByBtn('kyoto', 1)">⛩️ 京都 Kyoto</button>
+                  <button class="city-chip-btn" onclick="selectCityByBtn('seoul', 2)">🎧 首爾 Seoul</button>
+                  <button class="city-chip-btn" onclick="selectCityByBtn('osaka', 4)">🐙 大阪 Osaka</button>
+                  <button class="city-chip-btn" onclick="selectCityByBtn('singapore', 3)">🦁 新加坡 Singapore</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="shoes-callout">
+            <div class="shoes-icon">👟</div>
+            <div>
+              <h4>💡 簡報最後一頁「加分王牌」：用雙腳（鞋子）與步伐定義東京（呼應老師課堂最推崇案例）</h4>
+              <p>
+                老師在課堂最後花 15 分鐘盛讚「用鞋子定義台灣六都（台北皮鞋、台南拖鞋等）」。建議在簡報結尾放上一句微觀觀察：<br>
+                <strong>「如果用一雙鞋定義東京，東京就是『限量版設計聯名潮鞋（Sneakers）踏過百年神社石板路與澀谷黑白斑馬線』——在極致準時快節奏的秩序步伐中，每個旅人都能在轉角巷弄找到屬於自己的次文化歸屬。」</strong>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="prof-rules">
+      <div class="sec-head">
+        <span class="sec-eyebrow">STEP 03 · PROFESSOR'S GRADING RUBRIC</span>
+        <h2 class="sec-title">11/11 課堂老師總結：城市品牌行銷 4 大必考鐵律 ＆ 六都鞋子視覺轉化</h2>
+        <p class="sec-subtitle">萃取自錄音 105:25 – 148:00 老師 42 分鐘理論講解</p>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-num">RULE 01 · 113:16 – 114:20</span>
+          <h4>「你不是當市長！課業報告只能選『一個目標客群』」</h4>
+          <p>
+            城市的受眾雖有觀光客、企業投資客、高階人才、在地居民、活動單位，但市長才要全包；<strong>做課業報告只能鎖定「單一目標客群」</strong>，因為後面所有的定位、座標軸、視覺設計都要跟這個客群緊密咬合。
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-num">RULE 02 · 14:35 – 16:48 & 114:30</span>
+          <h4>定位圖 X/Y 軸必須 100% 源自「該客群最在意的兩個痛點」</h4>
+          <p>
+            前面鎖定什麼客群，後面定位圖的兩個軸就必須是該客群最看重的決策指標（如熊本鎖定動漫親子客，軸線就必須是「文化 × IP 吸引力」，絕不能放台積電高科技；桃園鎖定投資客，軸線就必須是「城市建設 × 產業招商」）。
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-num">RULE 03 · 117:55 – 122:30</span>
+          <h4>拒絕「每個城市都有的東西」，找出唯一亮點與量化證據</h4>
+          <p>
+            老師強調：<em>「台灣每個城市都有夜市、賣的東西都差不多，講夜市就沒特色；你有高山我也有高山，你有大海我也有大海。」</em>必須找出別人沒有的唯一亮點（或像高雄演唱會經濟拿出住房率與過夜產值數據）。
+          </p>
+        </div>
+
+        <div class="rule-card">
+          <span class="rule-num">RULE 04 · 126:00 – 147:35</span>
+          <h4>創造「WOW」的雙層體驗：世界級地標 × 巷弄市井微觀觀察</h4>
+          <p>
+            第一層是世界級地標與事件（如雪梨歌劇院跨年煙火、台北 101）；第二層是巷弄轉角的市井小民與市民文明素養（如台北捷運排隊文化）。AI 時代畫圖很容易，<strong>腦中對城市的「廣度知識」與「深度微觀觀察」才是勝負關鍵！</strong>
+          </p>
+        </div>
+      </div>
+
+      <h3 style="font-size:18px; font-weight:900; margin-bottom:14px;">👞 老師課堂分享案例：中原大學老師「用雙腳（鞋子）與步伐定義台灣六都」（141:05 – 146:55）</h3>
+      <div class="six-shoes-grid">
+        <div class="shoe-box">
+          <div class="shoe-emoji">👞</div>
+          <div class="shoe-city">台北市</div>
+          <div class="shoe-type">皮鞋</div>
+          <div class="shoe-desc">忠孝東路快步調、商務菁英與中央部會聚集、俐落都會感</div>
+        </div>
+        <div class="shoe-box">
+          <div class="shoe-emoji">👟</div>
+          <div class="shoe-city">新北市</div>
+          <div class="shoe-type">帆布鞋</div>
+          <div class="shoe-desc">平凡踏實、多元移居族群共存、日常通勤生活感</div>
+        </div>
+        <div class="shoe-box">
+          <div class="shoe-emoji">🏃</div>
+          <div class="shoe-city">桃園市</div>
+          <div class="shoe-type">運動鞋</div>
+          <div class="shoe-desc">多元產業聚落、年輕人口移入、充滿動能與活力</div>
+        </div>
+        <div class="shoe-box">
+          <div class="shoe-emoji">🥾</div>
+          <div class="shoe-city">台中市</div>
+          <div class="shoe-type">休閒鞋</div>
+          <div class="shoe-desc">悠閒生活步調、寬敞舒適的都市空間與午後漫步感</div>
+        </div>
+        <div class="shoe-box">
+          <div class="shoe-emoji">🩴</div>
+          <div class="shoe-city">台南市</div>
+          <div class="shoe-type">拖鞋</div>
+          <div class="shoe-desc">自在輕鬆、慢活日常、隨時鑽進巷弄吃美食的步調</div>
+        </div>
+        <div class="shoe-box">
+          <div class="shoe-emoji">🛵</div>
+          <div class="shoe-city">高雄市</div>
+          <div class="shoe-type">機車踏板上的雙腳</div>
+          <div class="shoe-desc">熱血接地氣、結合海浪幾何視覺的海港豪邁步調</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="groups-review">
+      <div class="sec-head">
+        <span class="sec-eyebrow">STEP 04 · GROUPS 1 TO 15 FULL TRANSCRIPT</span>
+        <h2 class="sec-title">11/11 第 1～15 組上台報告全紀錄與老師即時拷問重點</h2>
+        <p class="sec-subtitle">可使用下方篩選按鈕或輸入城市名稱／關鍵字快速檢索</p>
+      </div>
+
+      <div class="filter-bar">
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterGroups('all', this)">全部組別 (15)</button>
+          <button class="filter-btn" onclick="filterGroups('star', this)">⭐ 老師關鍵講評組 (必看)</button>
+          <button class="filter-btn" onclick="filterGroups('model', this)">✅ 大城市收斂典範</button>
+          <button class="filter-btn" onclick="filterGroups('trap', this)">⚠️ 踩雷反面教材</button>
+        </div>
+        <input type="text" class="search-input" id="groupSearch" placeholder="🔍 搜尋城市、熊本、台北、定位圖..." oninput="searchGroups()">
+      </div>
+
+      <div class="groups-grid" id="groupsContainer">
+        <div class="group-card star-case" data-cat="star">
+          <div class="gc-top">
+            <span class="gc-id">第 03 組｜03:03 – 16:50</span>
+            <span class="gc-badge badge-star">⭐ 全場最關鍵 STP 定位圖講評</span>
+          </div>
+          <div class="gc-title">🇯🇵 日本熊本市（Kumamoto）</div>
+          <p class="gc-summary">
+            盤點文化（熊本熊上兆商機、黑麻油拉麵、航海王銅像）、歷史（熊本城震後修復）、自然（阿蘇火山、100% 純天然地下水自來水）、產業（台積電 JASM 設廠）。目標客群選「文化與 IP 親子／動漫客群」，但定位圖座標軸卻放「工業高科技 vs 自然生態」。
+          </p>
+          <div class="gc-feedback">
+            <strong>🔥 老師關鍵講評（14:35–16:48）：</strong><br>
+            「你們鎖定『文化跟 IP 親子客群』，這個客群對台積電沒興趣！座標軸應該設為<strong>『文化程度』×『IP 吸引力』</strong>。單比文化，熊本最大的對手是<strong>京都</strong>；但把 IP（熊本熊、航海王）放進第二軸，京都就被比下去，熊本就能落在右上角黃金象限！」
+          </div>
+        </div>
+
+        <div class="group-card star-case" data-cat="star">
+          <div class="gc-top">
+            <span class="gc-id">第 05 組｜24:42 – 30:25</span>
+            <span class="gc-badge badge-star">⭐ 直接對應「單一區域 vs 全區」提問</span>
+          </div>
+          <div class="gc-title">🌴 屏東（Pingtung）</div>
+          <p class="gc-summary">
+            涵蓋全屏東縣（勝利星村、東港黑鮪魚季、熱帶農業博覽會、恆春半島與墾丁、大鵬灣、茂林），定位「山海交會的熱帶生活城市」，對比高雄、台南、台東。
+          </p>
+          <div class="gc-feedback">
+            <strong>🔥 關鍵問答（30:03–30:22）：</strong><br>
+            提問：<em>「為什麼不單純做墾丁？」</em>組員答：<em>「因為單做墾丁範圍太小，能講的元素只有海邊那些。」</em>追問：<em>「可是屏東整個縣會不會太大太散？」</em>（證明必須以城市為母體、但用單一核心主軸收斂）。
+          </div>
+        </div>
+
+        <div class="group-card model-case" data-cat="model star">
+          <div class="gc-top">
+            <span class="gc-id">第 10 組｜62:13 – 66:49</span>
+            <span class="gc-badge badge-model">✅ 大城市「單一主軸收斂」最佳典範</span>
+          </div>
+          <div class="gc-title">🎤 高雄（Kaohsiung）—— 聚焦演唱會經濟</div>
+          <p class="gc-summary">
+            雖以大城市高雄為題，但不列流水帳景點，精準聚焦<strong>「演唱會經濟 ＋ 港灣文創週末順遊」</strong>（世運主場館、巨蛋、流音中心、駁二、愛河灣、捷運輕軌），鎖定外地來聽演唱會並順遊留宿的年輕歌迷。
+          </p>
+          <div class="gc-feedback">
+            <strong>💡 老師提問與啟示（66:20）：</strong><br>
+            對比台北（金融商業）、台南（古蹟）、新竹（科技），高雄以「大型展演場館群＋海港文創」成功做出高辨識度定位（完美示範東京該如何收斂）。
+          </div>
+        </div>
+
+        <div class="group-card star-case" data-cat="star">
+          <div class="gc-top">
+            <span class="gc-id">第 11 組｜67:12 – 71:23</span>
+            <span class="gc-badge badge-star">⭐ 差異化客群 × 定位圖座標修正</span>
+          </div>
+          <div class="gc-title">✈️ 桃園市（Taoyuan）</div>
+          <p class="gc-summary">
+            盤點多元族群文化、大溪老街、石門水庫、桃園國際機場、機捷、航空城與工業物流聚落。在 5 大區隔中<strong>唯一不選觀光客，鎖定「企業與國內外投資者」</strong>，但最後定位圖卻畫了文化觀光。
+          </p>
+          <div class="gc-feedback">
+            <strong>🔥 老師關鍵講評（69:43–71:17）：</strong><br>
+            老師大讚鎖定「企業與投資客」非常有特色且符合桃園內部條件；但要求定位圖兩軸必須改為投資客最在意的<strong>「城市建設／物流便利」×「產業招商環境」</strong>，並與雙北、新竹對比。
+          </div>
+        </div>
+
+        <div class="group-card model-case" data-cat="model">
+          <div class="gc-top">
+            <span class="gc-id">第 12 組｜71:47 – 79:44</span>
+            <span class="gc-badge badge-model">✅ 大城市「文化走廊串聯」典範</span>
+          </div>
+          <div class="gc-title">⛵ 台南（Tainan）—— 聚焦五條港古水道</div>
+          <p class="gc-summary">
+            不泛談全台南古蹟，而是以<strong>「城市與水域／古港道的歷史關係」</strong>為唯一主軸，串聯清代五條港、風神廟、水仙宮市場、安平古堡、七股潟湖，鎖定深度歷史街巷自由行旅客。
+          </p>
+          <div class="gc-feedback">
+            <strong>💡 老師提問與比較（78:44）：</strong><br>
+            以「港城歷史可理解性 × 自由行探索便利性」為雙軸，並拿高雄哈瑪星（現代鐵道貨運港 vs 台南清代五條港街廓）做精準對比。
+          </div>
+        </div>
+
+        <div class="group-card trap-case" data-cat="trap star">
+          <div class="gc-top">
+            <span class="gc-id">第 13 組｜80:05 – 85:32</span>
+            <span class="gc-badge badge-trap">⚠️ 大城市「景點流水帳」被抓包反面教材</span>
+          </div>
+          <div class="gc-title">🏙️ 台北（Taipei）</div>
+          <p class="gc-summary">
+            把華山文創、各大夜市、台北 101、台北車站地下街、西門町彩虹斑馬線全部列出來，並宣稱「每個景點都有以該地命名的捷運站」。
+          </p>
+          <div class="gc-feedback">
+            <strong>💥 老師當場抓包拷問（80:58–81:35）：</strong><br>
+            老師立刻打斷問：<em>「請問華山文創園區的捷運站叫什麼名字？」</em>報告者答不出來（猜忠孝復興或台北車站，實為<strong>忠孝新生站</strong>）。再次證明做東京千萬別列全城景點流水帳！
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 01 組｜00:00 – 00:18</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">🌐 創新智慧與商業潛力城市（結尾片段）</div>
+          <p class="gc-summary">介紹城市商業潛力與創新智慧定位。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師提醒：</strong>詢問「為什麼選這個城市？很熟嗎？」並提醒若對城市很熟，上台就不該低頭看稿照念。
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 02 組｜00:33 – 02:49</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">🇨🇭 瑞士首都伯恩（Bern）</div>
+          <p class="gc-summary">慢節奏中世紀世界遺產古城、熊之城起源、歐洲最長 6 公里砂岩拱廊、時鐘塔、洋蔥節與街頭藝人節。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師提問（02:28）：</strong>「你們鎖定的客群是誰？」組員答：以參觀歷史文物為主的深度旅客。
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 04 組｜17:13 – 22:53</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">⛰️ 花蓮（Hualien）</div>
+          <p class="gc-summary">太魯閣、花東縱谷、七星潭、清水斷崖、阿美族豐年祭、太魯閣族樹皮工藝、蛇紋石與大理石工藝、鶴岡文旦、金針花季。定位圖為「方便快捷 ⟷ 慢活療癒」×「自然美景 ⟷ 繁華都市」。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師總結補充：</strong>花蓮應把台東、宜蘭、屏東一起放進定位圖比較交通便利性與生態景觀。
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 06 組｜42:58 – 47:25</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">🚂 彰化市（Changhua City）</div>
+          <p class="gc-summary">古稱半線、八卦山大佛、扇形車庫（鐵道古蹟）、花壇茉莉花館、孔廟與南瑤宮媽祖文化、彰化三寶（肉圓、爌肉飯、麻糬），主打「建城三百年慢活老城」。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師提問（46:10）：</strong>「定位有找哪些城市比較？」組員補充與台中（都市百貨夜市）及嘉義、台南（文青小店）做對比。
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 07 組｜47:50 – 53:34</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">♨️ 宜蘭（Yilan，第一組做宜蘭）</div>
+          <p class="gc-summary">雙北後花園、國道五號雪隧優勢、龜山島、礁溪溫泉、蘇澳冷泉、噶瑪蘭文化、三星蔥、羅東夜市。鎖定厭倦都市快節奏的雙北親子與年輕客群。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師提醒（53:17）：</strong>明確指出「市場區隔 ➔ 目標市場 ➔ 品牌定位」這個專業架構稱為 <strong>STP</strong>。
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 08 組｜53:52 – 57:31</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">🌲 嘉義市（Chiayi City）</div>
+          <p class="gc-summary">打破只有雞肉飯印象，主打「木都文化（阿里山林業樞紐、檜意森活村日式木造建築群）」＋「文化路夜市美食」，鎖定國內慢活自由行旅客。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師提問（57:00）：</strong>「有比較其他城市嗎？」組員補充與台南比較（台南偏古蹟廟宇，嘉義偏阿里山林業與日式木都文化）。
+          </div>
+        </div>
+
+        <div class="group-card trap-case" data-cat="trap">
+          <div class="gc-top">
+            <span class="gc-id">第 09 組｜57:48 – 61:51</span>
+            <span class="gc-badge badge-trap">⚠️ 簡報字體與底圖清晰度提醒</span>
+          </div>
+          <div class="gc-title">🏄 宜蘭（Yilan，第二組做宜蘭）</div>
+          <p class="gc-summary">蘭陽平原、龜山島、礁溪溫泉、太平山、烏石港衝浪、童玩節、傳藝中心，鎖定 18–35 歲北台灣週末兩天一夜小旅行族群。</p>
+          <div class="gc-feedback">
+            <strong>⚠️ 老師糾正（61:37）：</strong>簡報千萬不要使用模糊看不清楚的字體或低解析度底圖。
+          </div>
+        </div>
+
+        <div class="group-card" data-cat="normal">
+          <div class="gc-top">
+            <span class="gc-id">第 14 組｜85:59 – 90:32</span>
+            <span class="gc-badge badge-normal">一般講評</span>
+          </div>
+          <div class="gc-title">🌊 花蓮（Hualien，第二組做花蓮）</div>
+          <p class="gc-summary">太平洋公園、太魯閣、大理石與台灣玉、原住民麻糬、與法國駐台協會合作交流。定位圖以「文化體驗 × 生態景觀」對比台東（3小時 vs 7小時火車時間成本）、台北、新竹。</p>
+          <div class="gc-feedback">
+            <strong>💡 老師總結引用（114:50）：</strong>肯定其放入台東、台北做對比，並討論「對花蓮遊客而言，究竟是文化體驗還是交通便利更關鍵」。
+          </div>
+        </div>
+
+        <div class="group-card model-case" data-cat="model">
+          <div class="gc-top">
+            <span class="gc-id">第 15 組｜101:51 – 105:13</span>
+            <span class="gc-badge badge-model">✅ 預先提出城市四色視覺系統</span>
+          </div>
+          <div class="gc-title">🏡 宜蘭（Yilan，第三組做宜蘭）</div>
+          <p class="gc-summary">民宿密度全台第一（1,700+ 家）、綠博與童玩節、「山海泉與文化集中在同一軸線」，探討高鐵延伸後的過夜留客課題，定位「離台北最近的山海泉全齡慢住渡假城市」。</p>
+          <div class="gc-feedback">
+            <strong>💡 亮點：</strong>率先在簡報尾聲提出城市四色視覺系統（太平洋藍、蘭陽稻田綠、溫泉橘、山嵐灰），銜接期末視覺設計。
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>11/11 品牌課堂錄音全解析 ＆ 東京（Tokyo）城市品牌行銷 STP 高分策略網站｜自動生成自 <code>11-11課堂錄音 - 複製.aac</code></p>
+  </footer>
+
+  <script>
+    const cityData = {
+      tokyo: {
+        badge: '🌟 右上角黃金象限（我們的主角）',
+        title: '🗼 東京 Tokyo（時空折疊的極致混種之都）',
+        desc: '唯一能讓 20–35 歲深度自由行旅客「早上在淺草藏前體驗百年雷門祭典與職人手作、下午在澀谷秋葉原沉浸世界級動漫 IP 與街頭潮流、晚上在麻布台之丘看安藤忠雄／隈研吾建築與數位藝術」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！'
+      },
+      kyoto: {
+        badge: '↖️ 左上象限（歷史文化強敵）',
+        title: '⛩️ 京都 Kyoto（千年古都，但前衛次文化動能較低）',
+        desc: '套用老師課堂「熊本打敗京都」公式：如果只比 Y 軸「百年歷史文化底蘊」，東京很難贏過京都；但只要我們把 X 軸設為目標客群同樣極度在乎的「前衛潮流、動漫次文化與當代設計動能」，京都就會退居左上角，讓東京獨霸右上角黃金象限！'
+      },
+      seoul: {
+        badge: '↘️ 右下象限（現代流行娛樂強敵）',
+        title: '🎧 首爾 Seoul（K-Pop 與現代潮流強，但百年職人街區密度較低）',
+        desc: '首爾在 X 軸「現代流行娛樂與美妝潮流」表現極強，但在 Y 軸「融入日常生活的 400 年江戶下町祭典、百年職人老舖與次文化歷史層次」上，東京具備更深厚的歷史縱深與多元次文化底蘊。'
+      },
+      singapore: {
+        badge: '↘️ 右下偏中（現代花園金融都會）',
+        title: '🦁 新加坡 Singapore（現代綠建築與商務強，次文化與古街底蘊較淺）',
+        desc: '新加坡擁有極佳的現代都市建設與安全性，但偏向金融商務與人工景點；對於渴望「鑽進百年巷弄探索職人小店與高密度次文化衝擊」的 20–35 歲深度自由行旅客而言，東京的探索驚喜感遠勝新加坡。'
+      },
+      osaka: {
+        badge: '⏺️ 中間偏右（庶民美食與歡樂之都）',
+        title: '🐙 大阪 Osaka（庶民美食與娛樂性強，當代設計美學與新舊反差較弱）',
+        desc: '大阪主打熱情庶民美食（天下廚房）與環球影城，但在「世界級當代建築美學（如六本木／表參道／麻布台之丘）× 江戶傳統儀式感」的高反差美學張力上，東京仍具壓倒性優勢。'
+      }
+    };
+
+    function selectCity(key, nodeEl) {
+      document.querySelectorAll('.city-node').forEach(el => el.classList.remove('active'));
+      if (nodeEl) nodeEl.classList.add('active');
+
+      const data = cityData[key];
+      if (!data) return;
+      document.getElementById('pmap-badge').textContent = data.badge;
+      document.getElementById('pmap-title').textContent = data.title;
+      document.getElementById('pmap-desc').textContent = data.desc;
+
+      const btns = document.querySelectorAll('.city-chip-btn');
+      btns.forEach(b => {
+        b.classList.toggle('active', b.getAttribute('onclick').includes("'" + key + "'"));
+      });
+    }
+
+    function selectCityByBtn(key, nodeIndex) {
+      const nodes = document.querySelectorAll('.city-node');
+      selectCity(key, nodes[nodeIndex]);
+    }
+
+    function filterGroups(cat, btnEl) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+
+      document.getElementById('groupSearch').value = '';
+      const cards = document.querySelectorAll('.group-card');
+      cards.forEach(card => {
+        const cardCats = card.getAttribute('data-cat') || '';
+        if (cat === 'all' || cardCats.includes(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function searchGroups() {
+      const q = document.getElementById('groupSearch').value.trim().toLowerCase();
+      const cards = document.querySelectorAll('.group-card');
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    }
+
+    // 區域滑動連動提示 (ScrollSpy) 與欄位切換深色高亮
+    (function initScrollSpy() {
+      const navLinks = Array.from(document.querySelectorAll('#topNavLinks .nav-link'));
+      const sectionIds = navLinks.map(link => link.getAttribute('data-section'));
+      const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+      const hintEl = document.getElementById('currentSectionHint');
+      const progressFill = document.getElementById('scrollProgressFill');
+
+      function activateSection(activeId) {
+        let activeIdx = 0;
+        navLinks.forEach((link, idx) => {
+          const isMatch = link.getAttribute('data-section') === activeId;
+          link.classList.toggle('active', isMatch);
+          if (isMatch) {
+            activeIdx = idx;
+            if (hintEl) {
+              hintEl.textContent = '目前閱讀區塊：' + (link.getAttribute('data-label') || link.textContent);
+            }
+          }
+        });
+
+        sections.forEach(sec => {
+          sec.classList.toggle('section-active', sec.id === activeId);
+        });
+
+        if (progressFill) {
+          const pct = ((activeIdx + 1) / navLinks.length) * 100;
+          progressFill.style.width = pct + '%';
+        }
+      }
+
+      function onScroll() {
+        const triggerOffset = 180;
+        let currentId = sectionIds[0];
+
+        for (const sec of sections) {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= triggerOffset) {
+            currentId = sec.id;
+          }
+        }
+
+        // 若已滑到底部，強制高亮最後一個區塊
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 40) {
+          currentId = sectionIds[sectionIds.length - 1];
+        }
+
+        activateSection(currentId);
+      }
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          const targetId = link.getAttribute('data-section');
+          activateSection(targetId);
+        });
+      });
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
