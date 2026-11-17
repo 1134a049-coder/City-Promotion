@@ -207,6 +207,8 @@
       right: 0;
       width: min(880px, 94vw);
       height: 100vh;
+      height: 100dvh;
+      max-height: 100vh;
       background: #F8FAFC;
       z-index: 210;
       box-shadow: -12px 0 40px rgba(15, 23, 42, 0.35);
@@ -215,6 +217,7 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      touch-action: pan-y;
     }
 
     .script-drawer.open {
@@ -304,9 +307,14 @@
     }
 
     .sd-body {
-      padding: 24px;
-      overflow-y: auto;
-      flex: 1;
+      padding: 24px 24px 120px;
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      flex: 1 1 0px;
+      min-height: 0 !important;
+      max-height: calc(100vh - 120px);
+      max-height: calc(100dvh - 120px);
       display: flex;
       flex-direction: column;
       gap: 22px;
@@ -2440,6 +2448,13 @@
       backdrop.classList.toggle('open', isOpen);
       if (navBtn) navBtn.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      if (isOpen) {
+        const sdBody = document.getElementById('sdBody');
+        if (sdBody) {
+          sdBody.focus();
+        }
+      }
     }
 
     function filterScriptSlide(slideKey, tabEl) {
@@ -2451,6 +2466,11 @@
         const key = card.getAttribute('data-slide');
         card.style.display = (slideKey === 'all' || key === slideKey) ? 'block' : 'none';
       });
+
+      const sdBody = document.getElementById('sdBody');
+      if (sdBody) {
+        sdBody.scrollTop = 0;
+      }
     }
 
     function copyFullScript() {
