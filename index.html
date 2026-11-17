@@ -277,19 +277,22 @@
     .sd-tabs-bar {
       background: #FFFFFF;
       border-bottom: 1px solid var(--border-light);
-      padding: 10px 24px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
+      gap: 10px;
       overflow-x: auto;
       flex-shrink: 0;
     }
 
     .sd-tab {
+      flex: 1 1 0;
+      text-align: center;
       border: 1px solid var(--border-strong);
       background: var(--bg-subtle);
       color: var(--text-secondary);
-      padding: 6px 13px;
+      padding: 8px 12px;
       border-radius: 999px;
       font-size: 12.5px;
       font-weight: 800;
@@ -1592,8 +1595,8 @@
         <ul class="verdict-list">
           <li><span>❌</span> <span><strong>不把全東京景點流水帳列出</strong>（避免像第 13 組台北被抽問細節當場卡住，且定位圖座標軸會前後矛盾）。</span></li>
           <li><span>⚠️</span> <span><strong>不只縮在單一狹小街區</strong>（避免像第 5 組討論單做墾丁範圍太小，無法跟首爾、京都、新加坡同台比較）。</span></li>
-          <li><span>✅</span> <span><strong>鎖定「時空折疊：江戶底蘊 × 前衛次文化與設計」</strong>，只挑 <strong>淺草藏前、澀谷秋葉原、六本木麻布台</strong> 3
-              區代表全東京！</span></li>
+          <li><span>✅</span> <span><strong>鎖定「新舊交融：江戶底蘊 × 前衛潮流 × JR交通路網」</strong>，精選 <strong>淺草藏前、澀谷秋葉原、環狀地鐵路網</strong> 3
+              大支柱代表全東京！</span></li>
         </ul>
       </div>
     </div>
@@ -1648,9 +1651,9 @@
           <div>
             <span class="strat-tag">🌟 方案 C｜老師最愛滿分解法</span>
             <h3>以「東京」為品牌母體，用單一主軸串聯 3 大代表區域</h3>
-            <p class="strat-example">做法：維持「東京」國際大城格局，但鎖定「新舊時空折疊」單一核心主軸，只挑 3 個代表區域當證據，其餘全數捨棄！</p>
+            <p class="strat-example">做法：維持「東京」國際大城格局，但鎖定「新舊交融多元暢行」單一核心主軸，以三大核心觀光資源為支撐，其餘全數捨棄！</p>
             <ul class="strat-points">
-              <li><span>✅</span> <span><strong>完美符合老師「只選一樣」鐵律</strong>：目標客群精準鎖定「追求傳統底蘊 × 前衛潮流的年輕深度自由行旅客」。</span></li>
+              <li><span>✅</span> <span><strong>完美符合老師鐵律</strong>：目標客群精準鎖定「多元偏好的團體、親子家庭與自由行旅客」。</span></li>
               <li><span>✅</span> <span><strong>定位圖穩居右上角黃金象限</strong>：可用「百年傳統底蘊」打敗首爾／新加坡，再用「前衛次文化與當代設計」打敗京都！</span></li>
             </ul>
           </div>
@@ -1799,10 +1802,10 @@
 
               <div class="pmap-info">
                 <span class="pmap-info-badge" id="pmap-badge">🌟 右上角黃金象限（我們的主角）</span>
-                <h4 id="pmap-title">🗼 東京 Tokyo（時空折疊之都）</h4>
+                <h4 id="pmap-title">🗼 東京 Tokyo（新舊交融的多元暢行之都）</h4>
                 <p id="pmap-desc">
-                  唯一能讓 20–35 歲深度自由行旅客「早上在淺草藏前體驗百年雷門祭典與職人手作、下午在澀谷秋葉原沉浸世界級動漫 IP
-                  與街頭潮流、晚上在麻布台之丘看安藤忠雄／隈研吾建築與數位藝術」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！
+                  唯一能讓多元偏好的團體、親子家庭與自由行旅客「早上在淺草藏前體驗百年雷門祭典與老街文化、下午在澀谷秋葉原沉浸世界級動漫 IP
+                  與街頭潮流、透過完整 JR 與地鐵路網輕鬆跑點」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！
                 </p>
                 <div style="font-size:12.5px; color:#64748B; font-weight:700;">👇 點擊切換查看各競爭城市為何落後東京：</div>
                 <div class="city-btn-row">
@@ -2161,8 +2164,7 @@
     </div>
 
     <div class="sd-tabs-bar" id="sdTabsBar">
-      <button type="button" class="sd-tab active" onclick="filterScriptSlide('all', this)">📄 全部 4 頁＋Q&A 總覽</button>
-      <button type="button" class="sd-tab" onclick="filterScriptSlide('p1', this)">P.01 封面破題</button>
+      <button type="button" class="sd-tab active" onclick="filterScriptSlide('p1', this)">P.01 封面破題</button>
       <button type="button" class="sd-tab" onclick="filterScriptSlide('p2', this)">P.02 三大觀光資源 (含JR路網)</button>
       <button type="button" class="sd-tab" onclick="filterScriptSlide('p3', this)">P.03 STP 旅客篩選 (01~04)</button>
       <button type="button" class="sd-tab" onclick="filterScriptSlide('p4', this)">P.04 二維對比定位圖</button>
@@ -2202,7 +2204,7 @@
       </div>
 
       <!-- Slide 02 (Three Core Pillars with JR Network) -->
-      <div class="slide-script-card" data-slide="p2">
+      <div class="slide-script-card" data-slide="p2" style="display: none;">
         <div class="ssc-head">
           <div class="ssc-head-left">
             <span class="ssc-page-num">SLIDE 02</span>
@@ -2236,7 +2238,7 @@
       </div>
 
       <!-- Slide 03 (STP) -->
-      <div class="slide-script-card" data-slide="p3">
+      <div class="slide-script-card" data-slide="p3" style="display: none;">
         <div class="ssc-head">
           <div class="ssc-head-left">
             <span class="ssc-page-num">SLIDE 03</span>
@@ -2271,7 +2273,7 @@
       </div>
 
       <!-- Slide 04 (Perceptual Map) -->
-      <div class="slide-script-card" data-slide="p4">
+      <div class="slide-script-card" data-slide="p4" style="display: none;">
         <div class="ssc-head">
           <div class="ssc-head-left">
             <span class="ssc-page-num">SLIDE 04</span>
@@ -2304,7 +2306,7 @@
       </div>
 
       <!-- Professor Q&A Defense -->
-      <div class="slide-script-card" data-slide="qa">
+      <div class="slide-script-card" data-slide="qa" style="display: none;">
         <div class="ssc-head" style="background: linear-gradient(135deg, #9F1239, #BE123C);">
           <div class="ssc-head-left">
             <span class="ssc-page-num">Q&A DEFENSE</span>
@@ -2314,42 +2316,46 @@
         </div>
         <div class="ssc-content">
           <div class="ssc-qa-box">
-            <strong>❓ 預判拷問 1：「你們很熟東京嗎？剛剛講的淺草藏前、澀谷秋葉原、麻布台之丘，分別要搭什麼地鐵或電車線？」</strong><br>
+            <strong>❓ 預判拷問 1：「你們很熟東京嗎？剛剛講的淺草藏前、澀谷秋葉原，分別要搭什麼地鐵或電車線？怎麼跨區串聯？」</strong><br>
             <span style="color:#1E293B; display:block; margin-top:4px;">
-              💡 <strong>防禦標準答案（避免像第 13 組台北被問倒）：</strong><br>
-              • <strong>澀谷 ⟷ 原宿 ⟷ 秋葉原</strong>：全部都在東京最核心的環狀線<strong>「JR 山手線（Yamanote
-                Line）」</strong>與東京Metro<strong>「銀座線（Ginza Line）」</strong>上！<br>
-              • <strong>淺草・藏前</strong>：搭乘東京Metro<strong>「銀座線」</strong>或都營地鐵<strong>「淺草線（Asakusa
-                Line）」</strong>直達（淺草站與藏前站僅相隔一站，步行 10 分鐘即可從雷門走到藏前職人街區）。<br>
-              • <strong>六本木・麻布台之丘</strong>：搭乘東京Metro<strong>「日比谷線（Hibiya Line，神谷町站 5
-                號出口直通）」</strong>或<strong>「南北線（六本木一丁目站）」</strong>。這三大區域在 30 分鐘地鐵圈內完全串聯！
+              💡 <strong>防禦標準答案（展現對東京交通地理的絕對掌控度，避免像第 13 組台北被問倒）：</strong><br>
+              • <strong>澀谷 ⟷ 原宿 ⟷ 秋葉原</strong>：全部都在東京最核心的環狀線<strong>「JR 山手線（Yamanote Line）」</strong>上，班距每 2~3 分鐘一班，澀谷到原宿僅 1 站（3 分鐘），直達秋葉原約 20~25 分鐘！<br>
+              • <strong>淺草 ⟷ 藏前</strong>：搭乘東京 Metro <strong>「銀座線」</strong>或都營地鐵<strong>「淺草線（Asakusa Line）」</strong>直達，淺草站與藏前站僅相隔 1 站（步行亦僅 10 分鐘，即可從雷門古蹟漫步至藏前職人選物街區）。<br>
+              • <strong>古蹟 ⟷ 潮流跨區大串聯</strong>：從淺草搭乘<strong>「銀座線」</strong>即可一路直通澀谷；或從淺草搭「淺草線」到淺草橋轉 JR 總武線直達秋葉原，<strong>全程均在 20～30 分鐘地鐵圈內</strong>！這就是為什麼完整 JR 與地鐵系統是東京觀光不可或缺的核心支柱！
             </span>
           </div>
 
           <div class="ssc-qa-box">
             <strong>❓ 預判拷問 2：「東京這麼大，為什麼你們不單純只做『淺草』或只做『澀谷』一個區就好？」</strong><br>
             <span style="color:#1E293B; display:block; margin-top:4px;">
-              💡 <strong>防禦標準答案：</strong><br>
-              「報告老師，我們討論時發現，如果只單做『淺草』，放在定位圖上跟**京都**比歷史古蹟會完全輸給京都；如果只單做『澀谷』，又只剩下現代商業流行，沒辦法體現東京最獨特的『新舊反差張力』。東京之所以在國際城市品牌中無可取代，正是因為它能透過高密度地鐵網，在
-              20 分鐘內讓旅客從 400 年江戶下町瞬間切換到世界最前衛的動漫與當代建築，所以我們以『東京』為母體，但精準收斂在這條『新舊時空折疊走廊』。」
+              💡 <strong>防禦標準答案（展現清晰定位策略）：</strong><br>
+              「報告老師，我們在小組討論時也有想過是否只單挑淺草或澀谷，但深入分析後發現：<br>
+              第一、如果只單做『淺草』，放在定位圖上跟千年古都<strong>『京都』</strong>比歷史古蹟，古蹟數量與清幽度完全比不過京都；<br>
+              第二、如果只單做『澀谷』，又只剩下現代商業流行百貨，無法展現東京最獨特迷人的<strong>『新舊交融反差張力』</strong>。<br>
+              更關鍵的是，我們宣傳主題是<strong>『新舊交融的多元暢行之都』</strong>——東京真正的魅力，在於透過高密度地鐵網，讓旅客在 25 分鐘內從 400 年江戶傳統老街瞬間切換到全球最前衛的動漫潮流中心。因此以『東京』為母體，但以『三大核心觀光資源』收斂，才能展現新舊交融的完整深度與交通跑點的獨特優勢！」
             </span>
           </div>
 
           <div class="ssc-qa-box">
-            <strong>❓ 預判拷問 3：「你們定位圖為什麼選『前衛潮流次文化設計』跟『百年歷史職人底蘊』這兩個軸？」</strong><br>
+            <strong>❓ 預判拷問 3：「你們定位圖為什麼選『前衛潮流次文化動能』跟『百年傳統歷史底蘊』這兩個軸？」</strong><br>
             <span style="color:#1E293B; display:block; margin-top:4px;">
-              💡 <strong>防禦標準答案：</strong><br>
-              「因為我們在前面 STP 唯一鎖定的目標客群是『20–35 歲國際深度自由行年輕世代』。這群年輕旅人出國最在乎的兩個決策痛點（KBF），就是『既想要拍到最新潮的動漫
-              IP、街頭潮流與美術館建築，又想要走進真實的百年神社老街體驗日本傳統職人文化』。用這兩個軸線去對比競品，就能清楚看出京都偏左上（傳統深但現代潮流弱）、首爾與新加坡偏右下（現代流行強但百年街區少），只有東京能穩居右上角黃金象限！」
+              💡 <strong>防禦標準答案（嚴格對齊課堂邏輯：從目標客群痛點推導雙軸）：</strong><br>
+              「報告老師，這兩個軸線是**100% 由我們 STP 鎖定的目標客群——『多元偏好的團體、親子家庭與自由行旅客』的核心決策因素（KBF）所推導出來的！**<br>
+              當三五好友、家庭或伴侶結伴出遊時，全團人最大的痛點就是『每個人的喜好都不同』：有人想參拜神社與體驗傳統職人老街（縱軸：歷史底蘊），有人則熱衷秋葉原動漫、澀谷街頭流行或現代當代設計（橫軸：潮流動能）。<br>
+              如果去京都，偏好流行娛樂的團員會覺得單調（偏左上）；如果去首爾或新加坡，想體驗百年深厚傳統祭典的長輩或成員又會覺得少了歷史感（偏右下）。<br>
+              因此，我們選這兩個軸線，就是要證明：<strong>只有東京能同時兼顧『百年歷史底蘊』與『前衛潮流動能』拿下雙高，穩居右上角黃金象限，一次滿足全團所有人的多元偏好！</strong>」
             </span>
           </div>
 
           <div class="ssc-qa-box">
-            <strong>❓ 預判拷問 4：「東京也是國際金融中心，也有迪士尼樂園，為什麼你們不把商務客跟親子客一起納進來？」</strong><br>
+            <strong>❓ 預判拷問 4：「你們在 STP 為什麼鎖定『多元偏好的團體、親子家庭與自由行客』，而排除了『自然渡假客』與『慢活避世純古蹟客』？」</strong><br>
             <span style="color:#1E293B; display:block; margin-top:4px;">
-              💡 <strong>防禦標準答案：</strong><br>
-              「這正是遵循老師課堂教導我們的——做課業品牌報告不是當市長，不能貪心全包！如果把丸之內金融商務客或迪士尼親子客也塞進來，後面的品牌個性、定位圖座標軸跟期末的視覺設計就會完全失焦，所以我們在市場區隔（S）先列出它們，但在目標市場（T）集中火力只鎖定
-              20–35 歲文化潮流深度自由行客群。」
+              💡 <strong>防禦標準答案（展現精準市場區隔邏輯，避免無效排除）：</strong><br>
+              「報告老師，我們是針對<strong>『原本確實會考慮來日本觀光的真實旅客類別』</strong>進行嚴謹的市場收斂，而不是隨意挑選八竿子打不著的對象：<br>
+              • <strong>為什麼排除自然生態渡假客？</strong> 因為他們出國目的是追求原始山海、滑雪或潛水，東京是高密度開發水泥大都會，這類旅客最終必定轉往北海道或沖繩。<br>
+              • <strong>為什麼排除慢活避世純古蹟客？</strong> 因為他們渴望的是遠離人潮、寧靜放空或清幽參拜，東京節奏極快且人潮洶湧，容易造成緊繃疲勞，這群人更適合前往京都或箱根。<br>
+              • <strong>為什麼排除超低預算窮遊背包客？</strong> 因為東京住宿與消費高居全日本之冠，難以支撐長期窮遊，多半會轉向二三線城市。<br>
+              • <strong>為什麼最終唯一鎖定『多元偏好的團體、親子家庭與自由行客』？</strong> 因為這正是東京無可取代的絕對強項！不管是自由行個人、三五好友還是家庭出遊，成員偏好必定各異；東京既有老街傳統、又有動漫潮流，靠著環狀 JR 山手線與雙語地鐵就能輕鬆分頭探索或順遊體驗，真正做到『一座城市，一站式滿足全團所有人的多元願望』！」
             </span>
           </div>
         </div>
@@ -2366,8 +2372,8 @@
     const cityData = {
       tokyo: {
         badge: '🌟 右上角黃金象限（我們的主角）',
-        title: '🗼 東京 Tokyo（時空折疊的極致混種之都）',
-        desc: '唯一能讓 20–35 歲深度自由行旅客「早上在淺草藏前體驗百年雷門祭典與職人手作、下午在澀谷秋葉原沉浸世界級動漫 IP 與街頭潮流、晚上在麻布台之丘看安藤忠雄／隈研吾建築與數位藝術」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！'
+        title: '🗼 東京 Tokyo（新舊交融的多元暢行之都）',
+        desc: '唯一能讓多元偏好的團體、親子家庭與自由行旅客「早上在淺草藏前體驗百年雷門祭典與老街文化、下午在澀谷秋葉原沉浸世界級動漫 IP 與街頭潮流、透過完整 JR 與地鐵路網輕鬆跑點」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！'
       },
       kyoto: {
         badge: '↖️ 左上象限（歷史文化強敵）',
