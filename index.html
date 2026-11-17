@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=1400, user-scalable=yes, minimum-scale=0.1, maximum-scale=5.0">
   <title>11/11 品牌課堂深度解析 ＆ 東京（Tokyo）城市品牌高分策略指南</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-page: #F8FAFC;
@@ -60,7 +63,10 @@
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.65;
+      min-width: 1400px;
       -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     .top-nav {
@@ -74,20 +80,20 @@
     }
 
     .nav-container {
-      max-width: 1340px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 12px 24px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 14px;
       flex-wrap: nowrap;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       color: var(--text-main);
       flex-shrink: 0;
@@ -98,8 +104,8 @@
       color: #fff;
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: 13px;
-      padding: 6px 11px;
+      font-size: 12.5px;
+      padding: 6px 10px;
       border-radius: 8px;
       letter-spacing: 0.5px;
       white-space: nowrap;
@@ -107,13 +113,13 @@
 
     .logo-text {
       font-weight: 900;
-      font-size: 16px;
+      font-size: 15.5px;
       letter-spacing: -0.01em;
       white-space: nowrap;
     }
 
     .logo-sub {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-muted);
       font-weight: 500;
       display: block;
@@ -124,7 +130,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: nowrap;
       margin-left: auto;
     }
@@ -134,16 +140,18 @@
       background: var(--bg-subtle);
       border: 1.5px solid var(--border-strong);
       color: var(--text-secondary);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
-      padding: 7px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
       transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       white-space: nowrap;
       flex-shrink: 0;
+      cursor: pointer;
+      font-family: inherit;
     }
 
     .nav-link:hover {
@@ -159,6 +167,297 @@
       color: #FFFFFF;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.24);
       transform: translateY(-1px);
+    }
+
+    /* 簡報文稿開啟按鈕（點開後深色／玫瑰紅高亮） */
+    .nav-script-btn {
+      background: #FFF1F2;
+      border: 1.5px solid #FDA4AF;
+      color: #BE123C;
+    }
+
+    .nav-script-btn:hover,
+    .nav-script-btn.open {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary-dark);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+    }
+
+    /* 簡報文稿與詳細講稿側邊抽屜／彈窗 (Script Drawer Modal) */
+    .script-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .script-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .script-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(880px, 94vw);
+      height: 100vh;
+      background: #F8FAFC;
+      z-index: 210;
+      box-shadow: -12px 0 40px rgba(15, 23, 42, 0.35);
+      transform: translateX(102%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .script-drawer.open {
+      transform: translateX(0);
+    }
+
+    .sd-header {
+      background: linear-gradient(135deg, #0F172A 0%, #334155 100%);
+      color: #fff;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .sd-title-box h3 {
+      font-size: 18px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sd-title-box p {
+      font-size: 12.5px;
+      color: #CBD5E1;
+      margin-top: 3px;
+    }
+
+    .sd-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sd-action-btn {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      padding: 7px 13px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .sd-action-btn:hover {
+      background: var(--brand-primary);
+      border-color: var(--brand-primary);
+    }
+
+    .sd-tabs-bar {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      flex-shrink: 0;
+    }
+
+    .sd-tab {
+      border: 1px solid var(--border-strong);
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: inherit;
+      white-space: nowrap;
+      transition: all 0.18s;
+    }
+
+    .sd-tab.active,
+    .sd-tab:hover {
+      background: var(--brand-slate);
+      border-color: #0F172A;
+      color: #fff;
+    }
+
+    .sd-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .slide-script-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-strong);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ssc-head {
+      background: #667B84;
+      /* 對齊 Structured Living in Cities 莫蘭迪霧藍灰 */
+      color: #FFFFFF;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .ssc-head-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .ssc-page-num {
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .ssc-title {
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .ssc-time {
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+
+    .ssc-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ssc-slide-copy {
+      background: #F1F5F9;
+      border-left: 4px solid #667B84;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .ssc-slide-copy strong {
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .ssc-speech-box {
+      background: #FFFBEB;
+      border: 1.5px solid #FCD34D;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .ssc-speech-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #D97706;
+      color: #fff;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .ssc-speech-text {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: #1E293B;
+      font-weight: 500;
+    }
+
+    .ssc-speech-text p+p {
+      margin-top: 10px;
+    }
+
+    .ssc-transition {
+      background: #ECFDF5;
+      border-left: 4px solid var(--brand-emerald);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #065F46;
+      font-weight: 700;
+    }
+
+    .ssc-qa-box {
+      background: #FFF1F2;
+      border: 1px solid #FECDD3;
+      border-radius: 10px;
+      padding: 13px 16px;
+      font-size: 13px;
+      color: #881337;
+    }
+
+    /* 懸浮右下角「簡報文稿」快速開啟按鈕 */
+    .floating-script-fab {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 150;
+      background: linear-gradient(135deg, var(--brand-primary), #9F1239);
+      color: #fff;
+      border: 2px solid #fff;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 900;
+      box-shadow: 0 10px 25px rgba(225, 29, 72, 0.45);
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .floating-script-fab:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 14px 30px rgba(225, 29, 72, 0.55);
     }
 
     /* 區域滑動連動提示條 */
@@ -211,7 +510,7 @@
     }
 
     /* 區塊化容器與滑動連動高亮 */
-    .main-wrap > section {
+    .main-wrap>section {
       background: var(--bg-surface);
       border: 2px solid var(--border-light);
       border-radius: var(--radius-xl);
@@ -221,7 +520,7 @@
       position: relative;
     }
 
-    .main-wrap > section.section-active {
+    .main-wrap>section.section-active {
       border-color: var(--brand-slate);
       box-shadow: var(--shadow-lg);
     }
@@ -238,7 +537,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
       background-size: 24px 24px;
       pointer-events: none;
     }
@@ -452,8 +751,14 @@
       box-shadow: var(--shadow-md);
     }
 
-    .strat-card.bad { border-top: 6px solid #EF4444; }
-    .strat-card.warn { border-top: 6px solid #F59E0B; }
+    .strat-card.bad {
+      border-top: 6px solid #EF4444;
+    }
+
+    .strat-card.warn {
+      border-top: 6px solid #F59E0B;
+    }
+
     .strat-card.best {
       border: 2.5px solid var(--brand-emerald);
       border-top: 8px solid var(--brand-emerald);
@@ -473,9 +778,20 @@
       width: fit-content;
     }
 
-    .strat-card.bad .strat-tag { background: #FEE2E2; color: #B91C1C; }
-    .strat-card.warn .strat-tag { background: #FEF3C7; color: #B45309; }
-    .strat-card.best .strat-tag { background: #D1FAE5; color: #047857; }
+    .strat-card.bad .strat-tag {
+      background: #FEE2E2;
+      color: #B91C1C;
+    }
+
+    .strat-card.warn .strat-tag {
+      background: #FEF3C7;
+      color: #B45309;
+    }
+
+    .strat-card.best .strat-tag {
+      background: #D1FAE5;
+      color: #047857;
+    }
 
     .strat-card h3 {
       font-size: 19px;
@@ -589,9 +905,20 @@
       margin-bottom: 10px;
     }
 
-    .gear-card.past .gear-era { background: #FEF3C7; color: #92400E; }
-    .gear-card.present .gear-era { background: #FFE4E6; color: #BE123C; }
-    .gear-card.future .gear-era { background: #E0E7FF; color: #3730A3; }
+    .gear-card.past .gear-era {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .gear-card.present .gear-era {
+      background: #FFE4E6;
+      color: #BE123C;
+    }
+
+    .gear-card.future .gear-era {
+      background: #E0E7FF;
+      color: #3730A3;
+    }
 
     .gear-card h4 {
       font-size: 17px;
@@ -713,10 +1040,27 @@
       padding: 8px 10px;
       pointer-events: none;
     }
-    .quad-label.tl { top: 6px; left: 8px; }
-    .quad-label.tr { top: 6px; right: 8px; color: var(--brand-primary); }
-    .quad-label.bl { bottom: 6px; left: 8px; }
-    .quad-label.br { bottom: 6px; right: 8px; }
+
+    .quad-label.tl {
+      top: 6px;
+      left: 8px;
+    }
+
+    .quad-label.tr {
+      top: 6px;
+      right: 8px;
+      color: var(--brand-primary);
+    }
+
+    .quad-label.bl {
+      bottom: 6px;
+      left: 8px;
+    }
+
+    .quad-label.br {
+      bottom: 6px;
+      right: 8px;
+    }
 
     .axis-x {
       position: absolute;
@@ -750,10 +1094,31 @@
       z-index: 4;
     }
 
-    .axis-tag.top { top: 8px; left: 50%; transform: translateX(-50%); }
-    .axis-tag.bottom { bottom: 8px; left: 50%; transform: translateX(-50%); background: #64748B; }
-    .axis-tag.right { right: 8px; top: 50%; transform: translateY(-50%); }
-    .axis-tag.left { left: 8px; top: 50%; transform: translateY(-50%); background: #64748B; }
+    .axis-tag.top {
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .axis-tag.bottom {
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #64748B;
+    }
+
+    .axis-tag.right {
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .axis-tag.left {
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #64748B;
+    }
 
     .city-node {
       position: absolute;
@@ -777,7 +1142,7 @@
       border-radius: 50%;
       background: #475569;
       border: 3px solid #fff;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.22);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.22);
     }
 
     .node-name {
@@ -790,7 +1155,7 @@
       font-weight: 800;
       color: var(--text-main);
       white-space: nowrap;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
     }
 
     .city-node.tokyo .node-dot {
@@ -863,7 +1228,8 @@
       transition: all 0.15s;
     }
 
-    .city-chip-btn.active, .city-chip-btn:hover {
+    .city-chip-btn.active,
+    .city-chip-btn:hover {
       background: var(--brand-slate);
       color: #fff;
       border-color: var(--brand-slate);
@@ -948,10 +1314,29 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .shoe-emoji { font-size: 28px; margin-bottom: 6px; }
-    .shoe-city { font-size: 14px; font-weight: 900; color: var(--text-main); }
-    .shoe-type { font-size: 13px; font-weight: 800; color: var(--brand-primary); margin: 2px 0 6px; }
-    .shoe-desc { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+    .shoe-emoji {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .shoe-city {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .shoe-type {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin: 2px 0 6px;
+    }
+
+    .shoe-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
 
     .filter-bar {
       display: flex;
@@ -967,7 +1352,11 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .filter-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     .filter-btn {
       border: 1px solid var(--border-light);
@@ -982,7 +1371,8 @@
       transition: all 0.15s;
     }
 
-    .filter-btn.active, .filter-btn:hover {
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--brand-primary);
       color: #fff;
       border-color: var(--brand-primary);
@@ -1054,13 +1444,36 @@
       border-radius: 99px;
     }
 
-    .badge-star { background: #FEF3C7; color: #B45309; }
-    .badge-model { background: #D1FAE5; color: #047857; }
-    .badge-trap { background: #FEE2E2; color: #B91C1C; }
-    .badge-normal { background: #F1F5F9; color: #475569; }
+    .badge-star {
+      background: #FEF3C7;
+      color: #B45309;
+    }
 
-    .gc-title { font-size: 18px; font-weight: 900; color: var(--text-main); }
-    .gc-summary { font-size: 13.5px; color: var(--text-secondary); }
+    .badge-model {
+      background: #D1FAE5;
+      color: #047857;
+    }
+
+    .badge-trap {
+      background: #FEE2E2;
+      color: #B91C1C;
+    }
+
+    .badge-normal {
+      background: #F1F5F9;
+      color: #475569;
+    }
+
+    .gc-title {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .gc-summary {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
 
     .gc-feedback {
       background: var(--bg-subtle);
@@ -1072,7 +1485,9 @@
       margin-top: auto;
     }
 
-    .gc-feedback strong { color: var(--brand-primary-dark); }
+    .gc-feedback strong {
+      color: var(--brand-primary-dark);
+    }
 
     footer {
       background: #0F172A;
@@ -1081,19 +1496,9 @@
       padding: 32px 24px;
       font-size: 13px;
     }
-
-    @media (max-width: 900px) {
-      .nav-container, .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .hero-inner, .strategy-grid, .gears-grid, .stp-row, .pmap-section, .rules-grid, .groups-grid {
-        grid-template-columns: 1fr;
-      }
-      .six-shoes-grid { grid-template-columns: repeat(2, 1fr); }
-    }
   </style>
 </head>
+
 <body>
 
   <nav class="top-nav">
@@ -1106,10 +1511,16 @@
         </div>
       </a>
       <div class="nav-links" id="topNavLinks">
-        <a href="#tokyo-decision" class="nav-link active" data-section="tokyo-decision" data-label="STEP 01 · 🎯 東京決策：單一區域 vs 全城">🎯 東京決策：單一區域 vs 全城</a>
-        <a href="#tokyo-blueprint" class="nav-link" data-section="tokyo-blueprint" data-label="STEP 02 · 🗼 東京 STP 與定位圖">🗼 東京 STP 與定位圖</a>
-        <a href="#prof-rules" class="nav-link" data-section="prof-rules" data-label="STEP 03 · 🔥 老師 4 大評分鐵律">🔥 老師 4 大評分鐵律</a>
-        <a href="#groups-review" class="nav-link" data-section="groups-review" data-label="STEP 04 · 📋 第 1～15 組講評紀錄">📋 第 1～15 組講評紀錄</a>
+        <a href="#tokyo-decision" class="nav-link active" data-section="tokyo-decision"
+          data-label="STEP 01 · 🎯 東京決策：單一區域 vs 全城">🎯 東京決策：單一區域 vs 全城</a>
+        <a href="#tokyo-blueprint" class="nav-link" data-section="tokyo-blueprint"
+          data-label="STEP 02 · 🗼 東京 STP 與定位圖">🗼 東京 STP 與定位圖</a>
+        <a href="#prof-rules" class="nav-link" data-section="prof-rules" data-label="STEP 03 · 🔥 老師 4 大評分鐵律">🔥 老師 4
+          大評分鐵律</a>
+        <a href="#groups-review" class="nav-link" data-section="groups-review" data-label="STEP 04 · 📋 第 1～15 組講評紀錄">📋
+          第 1～15 組講評紀錄</a>
+        <button type="button" class="nav-link nav-script-btn" id="navScriptBtn" onclick="toggleScriptDrawer()">🎤
+          簡報文稿（點開詳細講稿）</button>
       </div>
     </div>
     <div class="scroll-status-bar">
@@ -1134,7 +1545,8 @@
         </div>
         <h1>介紹「東京 Tokyo」：<br>該選<span class="highlight">單一區域</span>，還是<span class="highlight">把全城特色列出</span>？</h1>
         <p class="hero-desc">
-          根據老師在 11/11 課堂對前 15 組的即時拷問（特別是第 3 組熊本、第 5 組屏東 vs 墾丁、第 10 組高雄、第 12 組台南、第 13 組台北被抓包），「全城流水帳」與「單一狹小街區」都會失分！本頁為您整合<strong>老師評分公式</strong>與<strong>東京滿分簡報架構</strong>。
+          根據老師在 11/11 課堂對前 15 組的即時拷問（特別是第 3 組熊本、第 5 組屏東 vs 墾丁、第 10 組高雄、第 12 組台南、第 13
+          組台北被抓包），「全城流水帳」與「單一狹小街區」都會失分！本頁為您整合<strong>老師評分公式</strong>與<strong>東京滿分簡報架構</strong>。
         </p>
         <div class="hero-stats">
           <div class="stat-box">
@@ -1149,6 +1561,12 @@
             <div class="stat-num">100% 連動</div>
             <div class="stat-label">目標客群痛點 × 定位圖兩軸</div>
           </div>
+        </div>
+        <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <button type="button" onclick="toggleScriptDrawer()"
+            style="background: linear-gradient(135deg, #E11D48, #BE123C); color: #fff; border: 2px solid #FDA4AF; padding: 12px 22px; border-radius: 999px; font-size: 14.5px; font-weight: 900; cursor: pointer; font-family: inherit; box-shadow: 0 8px 20px rgba(225, 29, 72, 0.38); display: inline-flex; align-items: center; gap: 8px;">
+            🎤 點此開啟：東京 6 頁簡報文稿 ＆ 詳細上台講稿
+          </button>
         </div>
       </div>
 
@@ -1166,7 +1584,8 @@
         <ul class="verdict-list">
           <li><span>❌</span> <span><strong>不把全東京景點流水帳列出</strong>（避免像第 13 組台北被抽問細節當場卡住，且定位圖座標軸會前後矛盾）。</span></li>
           <li><span>⚠️</span> <span><strong>不只縮在單一狹小街區</strong>（避免像第 5 組討論單做墾丁範圍太小，無法跟首爾、京都、新加坡同台比較）。</span></li>
-          <li><span>✅</span> <span><strong>鎖定「時空折疊：江戶底蘊 × 前衛次文化與設計」</strong>，只挑 <strong>淺草藏前、澀谷秋葉原、六本木麻布台</strong> 3 區代表全東京！</span></li>
+          <li><span>✅</span> <span><strong>鎖定「時空折疊：江戶底蘊 × 前衛次文化與設計」</strong>，只挑 <strong>淺草藏前、澀谷秋葉原、六本木麻布台</strong> 3
+              區代表全東京！</span></li>
         </ul>
       </div>
     </div>
@@ -1188,7 +1607,8 @@
             <h3>把整個東京的知名景點全部列出（流水帳大雜燴）</h3>
             <p class="strat-example">做法：把淺草、晴空塔、東京鐵塔、澀谷、新宿、秋葉原、銀座、上野、台場、迪士尼全部塞進簡報。</p>
             <ul class="strat-points">
-              <li><span>💥</span> <span><strong>定位圖必精神分裂</strong>：前面既講古蹟、又講動漫、又講金融商務，後面畫二維定位圖時，根本選不出一致的 X 軸與 Y 軸（重蹈第 3 組熊本、第 11 組桃園覆轍）。</span></li>
+              <li><span>💥</span> <span><strong>定位圖必精神分裂</strong>：前面既講古蹟、又講動漫、又講金融商務，後面畫二維定位圖時，根本選不出一致的 X 軸與 Y 軸（重蹈第 3
+                  組熊本、第 11 組桃園覆轍）。</span></li>
               <li><span>💥</span> <span><strong>極易被老師抽問抓包</strong>：景點列越多越像旅遊手冊，老師隨便抽問一個地標細節答不出就會當場破功。</span></li>
             </ul>
           </div>
@@ -1204,8 +1624,10 @@
             <h3>只單純介紹東京的「單一狹小行政區／商圈」</h3>
             <p class="strat-example">做法：整份報告只介紹「淺草區」或只介紹「下北澤商圈」。</p>
             <ul class="strat-points">
-              <li><span>⚠️</span> <span><strong>變成商圈導覽而非城市品牌</strong>：課程要求是「City Branding（城市品牌行銷）」，只講單一街區會讓內部資源盤點過於單薄。</span></li>
-              <li><span>⚠️</span> <span><strong>外部競爭城市難以對決</strong>：後面畫知覺定位圖時，「淺草」很難直接跟「首爾、新加坡、香港、大阪」等國際大城放在同一個量級比較。</span></li>
+              <li><span>⚠️</span> <span><strong>變成商圈導覽而非城市品牌</strong>：課程要求是「City
+                  Branding（城市品牌行銷）」，只講單一街區會讓內部資源盤點過於單薄。</span></li>
+              <li><span>⚠️</span>
+                <span><strong>外部競爭城市難以對決</strong>：後面畫知覺定位圖時，「淺草」很難直接跟「首爾、新加坡、香港、大阪」等國際大城放在同一個量級比較。</span></li>
             </ul>
           </div>
           <div class="case-proof">
@@ -1242,7 +1664,8 @@
       <div class="blueprint-box">
         <div class="bp-header">
           <div>
-            <div style="font-size:12px; color:#94A3B8; font-weight:700; margin-bottom:4px;">BRAND CORE POSITIONING · 一句話定義東京</div>
+            <div style="font-size:12px; color:#94A3B8; font-weight:700; margin-bottom:4px;">BRAND CORE POSITIONING ·
+              一句話定義東京</div>
             <h3>東京 Tokyo：時空折疊的極致混種之都</h3>
           </div>
           <span class="bp-slogan">400 年江戶職人底蘊 × 世界最前衛次文化與當代設計，在山手線 30 分鐘內無縫切換</span>
@@ -1279,7 +1702,8 @@
                 </p>
               </div>
             </div>
-            <div style="margin-top:14px; background:#F1F5F9; padding:12px 16px; border-radius:10px; font-size:13.5px; color:#334155;">
+            <div
+              style="margin-top:14px; background:#F1F5F9; padding:12px 16px; border-radius:10px; font-size:13.5px; color:#334155;">
               <strong>🚇 軟硬體基礎建設與微觀文化亮點（呼應老師五大支柱）：</strong>
               硬體具備全球最高密度且精準至秒的 JR 山手線與地鐵路網、完善的清楚指標；軟體則是令外國遊客驚嘆（WOW）的<strong>「世界最繁華卻最安靜整潔的電車秩序與排隊文明」</strong>。
             </div>
@@ -1313,10 +1737,13 @@
               <p style="font-size:14px; color:#881337; margin-bottom:12px;">
                 完全遵循老師鐵律：<strong>「課業報告只選一個目標客群，並由此推導定位圖的兩個座標軸！」</strong>
               </p>
-              <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:#881337;">
+              <ul
+                style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:13.5px; color:#881337;">
                 <li>✅ <strong>痛點維度 X 軸</strong>：這群年輕深度自由行旅客極度看重<strong>「前衛潮流、動漫次文化與當代設計展演動能」</strong>。</li>
                 <li>✅ <strong>痛點維度 Y 軸</strong>：同時他們不滿足於純現代水泥叢林，渴望體驗<strong>「百年歷史街區底蘊與職人生活美學」</strong>。</li>
-                <li>🎯 <strong>完美擊敗競品（套用老師熊本打敗京都公式）</strong>：單比古蹟歷史，東京面對強敵<strong>京都</strong>；但把「前衛潮流與次文化設計」放入橫軸後，東京直接躍居<strong>右上角黃金象限</strong>！</li>
+                <li>🎯
+                  <strong>完美擊敗競品（套用老師熊本打敗京都公式）</strong>：單比古蹟歷史，東京面對強敵<strong>京都</strong>；但把「前衛潮流與次文化設計」放入橫軸後，東京直接躍居<strong>右上角黃金象限</strong>！
+                </li>
               </ul>
             </div>
           </div>
@@ -1371,7 +1798,8 @@
                 <span class="pmap-info-badge" id="pmap-badge">🌟 右上角黃金象限（我們的主角）</span>
                 <h4 id="pmap-title">🗼 東京 Tokyo（時空折疊之都）</h4>
                 <p id="pmap-desc">
-                  唯一能讓 20–35 歲深度自由行旅客「早上在淺草藏前體驗百年雷門祭典與職人手作、下午在澀谷秋葉原沉浸世界級動漫 IP 與街頭潮流、晚上在麻布台之丘看安藤忠雄／隈研吾建築與數位藝術」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！
+                  唯一能讓 20–35 歲深度自由行旅客「早上在淺草藏前體驗百年雷門祭典與職人手作、下午在澀谷秋葉原沉浸世界級動漫 IP
+                  與街頭潮流、晚上在麻布台之丘看安藤忠雄／隈研吾建築與數位藝術」的城市。透過雙軸鎖定，完美拉開與京都、首爾的差距！
                 </p>
                 <div style="font-size:12.5px; color:#64748B; font-weight:700;">👇 點擊切換查看各競爭城市為何落後東京：</div>
                 <div class="city-btn-row">
@@ -1436,12 +1864,14 @@
           <span class="rule-num">RULE 04 · 126:00 – 147:35</span>
           <h4>創造「WOW」的雙層體驗：世界級地標 × 巷弄市井微觀觀察</h4>
           <p>
-            第一層是世界級地標與事件（如雪梨歌劇院跨年煙火、台北 101）；第二層是巷弄轉角的市井小民與市民文明素養（如台北捷運排隊文化）。AI 時代畫圖很容易，<strong>腦中對城市的「廣度知識」與「深度微觀觀察」才是勝負關鍵！</strong>
+            第一層是世界級地標與事件（如雪梨歌劇院跨年煙火、台北 101）；第二層是巷弄轉角的市井小民與市民文明素養（如台北捷運排隊文化）。AI
+            時代畫圖很容易，<strong>腦中對城市的「廣度知識」與「深度微觀觀察」才是勝負關鍵！</strong>
           </p>
         </div>
       </div>
 
-      <h3 style="font-size:18px; font-weight:900; margin-bottom:14px;">👞 老師課堂分享案例：中原大學老師「用雙腳（鞋子）與步伐定義台灣六都」（141:05 – 146:55）</h3>
+      <h3 style="font-size:18px; font-weight:900; margin-bottom:14px;">👞 老師課堂分享案例：中原大學老師「用雙腳（鞋子）與步伐定義台灣六都」（141:05 –
+        146:55）</h3>
       <div class="six-shoes-grid">
         <div class="shoe-box">
           <div class="shoe-emoji">👞</div>
@@ -1496,7 +1926,8 @@
           <button class="filter-btn" onclick="filterGroups('model', this)">✅ 大城市收斂典範</button>
           <button class="filter-btn" onclick="filterGroups('trap', this)">⚠️ 踩雷反面教材</button>
         </div>
-        <input type="text" class="search-input" id="groupSearch" placeholder="🔍 搜尋城市、熊本、台北、定位圖..." oninput="searchGroups()">
+        <input type="text" class="search-input" id="groupSearch" placeholder="🔍 搜尋城市、熊本、台北、定位圖..."
+          oninput="searchGroups()">
       </div>
 
       <div class="groups-grid" id="groupsContainer">
@@ -1507,11 +1938,13 @@
           </div>
           <div class="gc-title">🇯🇵 日本熊本市（Kumamoto）</div>
           <p class="gc-summary">
-            盤點文化（熊本熊上兆商機、黑麻油拉麵、航海王銅像）、歷史（熊本城震後修復）、自然（阿蘇火山、100% 純天然地下水自來水）、產業（台積電 JASM 設廠）。目標客群選「文化與 IP 親子／動漫客群」，但定位圖座標軸卻放「工業高科技 vs 自然生態」。
+            盤點文化（熊本熊上兆商機、黑麻油拉麵、航海王銅像）、歷史（熊本城震後修復）、自然（阿蘇火山、100% 純天然地下水自來水）、產業（台積電 JASM 設廠）。目標客群選「文化與 IP
+            親子／動漫客群」，但定位圖座標軸卻放「工業高科技 vs 自然生態」。
           </p>
           <div class="gc-feedback">
             <strong>🔥 老師關鍵講評（14:35–16:48）：</strong><br>
-            「你們鎖定『文化跟 IP 親子客群』，這個客群對台積電沒興趣！座標軸應該設為<strong>『文化程度』×『IP 吸引力』</strong>。單比文化，熊本最大的對手是<strong>京都</strong>；但把 IP（熊本熊、航海王）放進第二軸，京都就被比下去，熊本就能落在右上角黃金象限！」
+            「你們鎖定『文化跟 IP 親子客群』，這個客群對台積電沒興趣！座標軸應該設為<strong>『文化程度』×『IP 吸引力』</strong>。單比文化，熊本最大的對手是<strong>京都</strong>；但把
+            IP（熊本熊、航海王）放進第二軸，京都就被比下去，熊本就能落在右上角黃金象限！」
           </div>
         </div>
 
@@ -1620,7 +2053,8 @@
             <span class="gc-badge badge-normal">一般講評</span>
           </div>
           <div class="gc-title">⛰️ 花蓮（Hualien）</div>
-          <p class="gc-summary">太魯閣、花東縱谷、七星潭、清水斷崖、阿美族豐年祭、太魯閣族樹皮工藝、蛇紋石與大理石工藝、鶴岡文旦、金針花季。定位圖為「方便快捷 ⟷ 慢活療癒」×「自然美景 ⟷ 繁華都市」。</p>
+          <p class="gc-summary">太魯閣、花東縱谷、七星潭、清水斷崖、阿美族豐年祭、太魯閣族樹皮工藝、蛇紋石與大理石工藝、鶴岡文旦、金針花季。定位圖為「方便快捷 ⟷ 慢活療癒」×「自然美景 ⟷ 繁華都市」。
+          </p>
           <div class="gc-feedback">
             <strong>💡 老師總結補充：</strong>花蓮應把台東、宜蘭、屏東一起放進定位圖比較交通便利性與生態景觀。
           </div>
@@ -1702,6 +2136,304 @@
 
   </main>
 
+  <!-- 懸浮右下角「簡報文稿」快速開啟按鈕 -->
+  <button type="button" class="floating-script-fab" onclick="toggleScriptDrawer()" title="快捷鍵 P 開啟/關閉詳細講稿">
+    <span>🎤</span>
+    <span>簡報文稿・詳細講稿 (P)</span>
+  </button>
+
+  <!-- 簡報文稿與詳細講稿側邊抽屜／彈窗 (Script Drawer) -->
+  <div class="script-backdrop" id="scriptBackdrop" onclick="toggleScriptDrawer(false)"></div>
+  <aside class="script-drawer" id="scriptDrawer" aria-label="簡報文稿與詳細講稿">
+    <div class="sd-header">
+      <div class="sd-title-box">
+        <h3>🎤 東京（Tokyo）城市品牌行銷——6 頁簡報文稿 ＆ 詳細上台講稿</h3>
+        <p>1:1 對齊 Canva「Structured Living in Cities」莫蘭迪霧藍灰模板｜總時長約 4 分 30 秒（直接切入核心、不看稿死背）</p>
+      </div>
+      <div class="sd-header-actions">
+        <button type="button" class="sd-action-btn" id="copyAllScriptBtn" onclick="copyFullScript()">📋
+          一鍵複製全篇講稿</button>
+        <button type="button" class="sd-action-btn" onclick="toggleScriptDrawer(false)">✕ 關閉 (Esc)</button>
+      </div>
+    </div>
+
+    <div class="sd-tabs-bar" id="sdTabsBar">
+      <button type="button" class="sd-tab active" onclick="filterScriptSlide('all', this)">📄 全部 6 頁＋Q&A 總覽</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('p1', this)">P.01 封面破題</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('p2', this)">P.02 內部資源 (1~4)</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('p3', this)">P.03 時空三區 (3卡)</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('p4', this)">P.04 STP 客群 (01~04)</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('p5', this)">P.05 知覺定位圖</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('p6', this)">P.06 雙腳鞋子定義</button>
+      <button type="button" class="sd-tab" onclick="filterScriptSlide('qa', this)">🛡️ 老師拷問 Q&A 防禦</button>
+    </div>
+
+    <div class="sd-body" id="sdBody">
+
+      <!-- Slide 01 -->
+      <div class="slide-script-card" data-slide="p1">
+        <div class="ssc-head">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">SLIDE 01</span>
+            <span class="ssc-title">封面破題：Structured Time in Tokyo（東京：時空折疊的秩序之都）</span>
+          </div>
+          <span class="ssc-time">⏱ 建議控時：35 秒</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-slide-copy">
+            <strong>🖼️ 投影片畫面文稿（對應 Canva 範本圖 1 封面）：</strong>
+            • 主標題：<code>Structured Time in Tokyo ｜ 東京：時空折疊的秩序之都</code><br>
+            • 副標題：<code>Edo Heritage & Future Pop Within Urban Life ｜ 城市品牌行銷與 STP 定位分析（第 20 組）</code>
+          </div>
+          <div class="ssc-speech-box">
+            <span class="ssc-speech-label">🎤 詳細上台演講逐字稿</span>
+            <div class="ssc-speech-text">
+              <p><strong>【開場破題：為什麼東京不能用流水帳介紹？】</strong><br>
+                老師好、各位同學好，我們是第 20 組。今天我們要進行城市品牌行銷分析的城市是日本首都——<strong>「東京（Tokyo）」</strong>。</p>
+              <p>
+                在準備報告時我們思考了一個核心問題：東京是一座極度龐大的超級大都會，如果我們像一般旅行社手冊一樣，把晴空塔、東京鐵塔、銀座、台場、迪士尼全部列出來，整份報告就會變成沒有靈魂的景點流水帳。因此，我們遵循老師強調的「城市品牌收斂原則」，將東京的品牌核心定義為——<strong>「時空折疊的秩序之都（Structured
+                  Time in Tokyo）」</strong>：也就是一座能讓 400 年江戶職人底蘊，與世界最前衛的動漫次文化及當代設計，在山手線 30 分鐘生活圈內無縫切換的城市。</p>
+            </div>
+          </div>
+          <div class="ssc-transition">
+            🔗 <strong>轉場話術：</strong>「那麼，東京究竟擁有什麼樣的底層條件，能支撐起這種『時空折疊』的品牌定位？請看第 2 頁我們的城市內部資源盤點。」
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 02 -->
+      <div class="slide-script-card" data-slide="p2">
+        <div class="ssc-head">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">SLIDE 02</span>
+            <span class="ssc-title">內部資源盤點：Tokyo Resources and Daily Order（四大核心支柱）</span>
+          </div>
+          <span class="ssc-time">⏱ 建議控時：50 秒</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-slide-copy">
+            <strong>🖼️ 投影片畫面文稿（對應 Canva 範本圖 2：左上斜切圖 ＋ 底部 1～4 編號方塊）：</strong>
+            • <code>[1] 百年江戶下町與職人活化（淺草・藏前）</code>：保留 400 年雷門淺草寺祭典與百年老舖，緊鄰「東京布魯克林」藏前職人街區。<br>
+            • <code>[2] 次文化動漫與街頭潮流心臟（澀谷・秋葉原）</code>：每綠燈 3,000 人同時穿越的澀谷十字路口，結合全球最強動漫電玩 IP 與原宿潮流。<br>
+            • <code>[3] 當代建築美學與數位藝術（六本木・麻布台）</code>：匯聚安藤忠雄、隈研吾等大師建築群與 teamLab 沉浸式數位藝術。<br>
+            • <code>[4] 全球最精準路網與極致安靜的排隊文明</code>：精準至秒的 JR 山手線與雙語地鐵網，以及最繁華卻最安靜整潔的電車與排隊秩序。
+          </div>
+          <div class="ssc-speech-box">
+            <span class="ssc-speech-label">🎤 詳細上台演講逐字稿</span>
+            <div class="ssc-speech-text">
+              <p><strong>【盤點東京四大內部資源：文化、潮流、建築與軟硬體基建】</strong><br>
+                請看第 2 頁下方這四個編號方塊。我們將東京的內部資源收斂為四大支柱：<br>
+                <strong>第一點是「歷史與職人文化」</strong>：東京並非只有現代高樓，在東側的淺草與藏前，完整保留了 400 年江戶時代的三社祭信仰、百年老舖與傳統手工藝。<br>
+                <strong>第二點是「全球次文化與潮流心臟」</strong>：在澀谷、原宿與秋葉原，聚集了全世界產值最高的動漫電玩 IP 聖地，以及引領亞洲青年穿搭的街頭潮流。<br>
+                <strong>第三點是「世界級當代建築與數位藝術」</strong>：在六本木與麻布台之丘，旅客走在街頭就能直接體驗安藤忠雄、隈研吾等大師的建築美學，以及 teamLab
+                將科技結合藝術的沉浸式展演。<br>
+                <strong>第四點則是老師強調的「軟硬體基礎建設與微觀文化」</strong>：硬體上，東京擁有全球最高密度、精準到秒的 JR
+                山手線與地鐵雙語路網，外國人自由行完全零障礙；軟體上，則是令無數外國遊客產生「WOW（驚嘆）」體驗的城市文明——明明是全球人口密度最高的繁華都市，但電車車廂內卻極度安靜、街道一塵不染、每個轉角都維持著極致守序的排隊文化。
+              </p>
+            </div>
+          </div>
+          <div class="ssc-transition">
+            🔗 <strong>轉場話術：</strong>「為了不讓報告失焦，我們從全東京精選出最具代表性的『三個區域切面』，分別代表東京的過去、現在與未來——請看第 3 頁。」
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 03 -->
+      <div class="slide-script-card" data-slide="p3">
+        <div class="ssc-head">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">SLIDE 03</span>
+            <span class="ssc-title">空間收斂證據：Time-Folded Three Districts（時空折疊三大代表區域）</span>
+          </div>
+          <span class="ssc-time">⏱ 建議控時：45 秒</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-slide-copy">
+            <strong>🖼️ 投影片畫面文稿（對應 Canva 範本圖 3：底部 3 張斜切平行四邊形半透明卡）：</strong>
+            • <code>【左卡｜過去 Past】淺草・藏前</code>：400 年江戶庶民信仰與三社祭底蘊，結合藏前手作皮革、金屬工藝與獨立咖啡館，展現老城有機活化。<br>
+            • <code>【中卡｜現在 Present】澀谷・原宿・秋葉原</code>：高密度都會秩序與次文化爆發力並存。從澀谷黑白斑馬線到秋葉原動漫 IP 朝聖，定義全球青年流行語彙。<br>
+            • <code>【右卡｜未來 Future】六本木・麻布台之丘</code>：以森大廈都市更新、21_21 DESIGN SIGHT 與數位光影藝術，打造人本綠意與未來科技交織的明日天際線。
+          </div>
+          <div class="ssc-speech-box">
+            <span class="ssc-speech-label">🎤 詳細上台演講逐字稿</span>
+            <div class="ssc-speech-text">
+              <p><strong>【用三個齒輪撐起東京品牌母體：過去 × 現在 × 未來】</strong><br>
+                請看第 3 頁底部的三張斜切卡片。為什麼我們不需要列出全東京二十三個區？因為只要透過這三個區域，就能完整證明東京「時空折疊」的品牌靈魂：<br>
+                <strong>左邊第一張卡片代表「過去（Past）」——淺草與藏前</strong>：這裡有東京最古老的淺草寺雷門，但走過一條街來到「藏前」，過去江戶時代的米倉與職人玩具批發街，現在活化成被譽為「東京布魯克林」的文具選物與手沖咖啡聚落，讓百年歷史真正活在現代日常裡。<br>
+                <strong>中間第二張卡片代表「現在（Present）」——澀谷、原宿與秋葉原</strong>：每次綠燈亮起，澀谷十字路口有高達 3,000
+                人同時過馬路卻從不相撞，展現了混亂中的極致秩序；搭配秋葉原密集的動漫 IP 產業，是當代青年次文化的最高殿堂。<br>
+                <strong>右邊第三張卡片則代表「未來（Future）」——六本木與麻布台之丘</strong>：透過大型都市更新，將垂直森林綠化、21_21 DESIGN SIGHT
+                設計美術館與數位光影科技融為一體，展現未來城市的樣貌。
+              </p>
+            </div>
+          </div>
+          <div class="ssc-transition">
+            🔗 <strong>轉場話術：</strong>「盤點完內部資源後，我們進入最關鍵的 STP 行銷策略分析：面對這麼多元的城市資源，我們這份報告鎖定的唯一目標客群是誰？請看第 4 頁。」
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 04 -->
+      <div class="slide-script-card" data-slide="p4">
+        <div class="ssc-head">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">SLIDE 04</span>
+            <span class="ssc-title">STP 策略分析：市場區隔（S）與唯一目標客群選擇（T）</span>
+          </div>
+          <span class="ssc-time">⏱ 建議控時：45 秒</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-slide-copy">
+            <strong>🖼️ 投影片畫面文稿（對應 Canva 範本圖 4：外白框 ＋ 右側 01～04 四宮格）：</strong>
+            • <code>[01] 跨國金融與企業商務客（排除）</code>：集中於丸之內與品川，重視跨國總部法規與會展效率，非本次文化觀光鎖定對象。<br>
+            • <code>[02] 傳統走馬看花跟團與親子客（排除）</code>：偏好主題樂園與單一地標打卡，停留淺層，較難深入體驗新舊文化反差美學。<br>
+            • <code>[03] 跨國科技研發與長居留學人才（排除）</code>：關注長期租屋、外語醫療與簽證制度，屬市政移居政策範疇，故予以收斂排除。<br>
+            • <code>[04] 🎯 唯一鎖定：20–35 歲深度自由行世代</code>：渴望在單一旅程中同時獲得「百年江戶職人底蘊」與「前衛動漫潮流／當代設計美學」雙重衝擊的年輕旅客。
+          </div>
+          <div class="ssc-speech-box">
+            <span class="ssc-speech-label">🎤 詳細上台演講逐字稿</span>
+            <div class="ssc-speech-text">
+              <p><strong>【遵循老師「只選一個目標客群」鐵律，集中火力精準打擊】</strong><br>
+                請看第 4 頁右側的四宮格。在 STP 的「S（市場區隔）」階段，東京的受眾原本可以切分為四類：包括 `01` 到丸之內洽公的跨國金融商務客、`02` 去迪士尼或傳統名勝打卡的跟團親子客、`03`
+                長期留學與跨國研發移居人才，以及 `04` 年輕深度自由行世代。</p>
+              <p>正如同老師在課堂上強調的——「我們不是當市長，做品牌行銷報告只能選一個最精準的目標市場（Target Market），並將它與後面的定位圖完全扣合！」因此，我們果斷排除前三類，**唯一鎖定第 `04`
+                格：「20 到 35 歲、渴望『百年傳統底蘊 × 前衛潮流與設計美學』雙重滿足的國際深度自由行年輕世代」**！</p>
+              <p>
+                為什麼選這群人？因為他們不喜歡走馬看花的跟團行程，他們出國自由行最在乎的兩個決策痛點（KBF），第一是「這座城市有沒有夠強的潮流、動漫次文化與設計展覽可以逛？」，第二則是「這座城市有沒有真實的百年老街與職人生活文化可以深度探索？」
+              </p>
+            </div>
+          </div>
+          <div class="ssc-transition">
+            🔗 <strong>轉場話術：</strong>「抓出這個目標客群最在乎的兩個決策變數後，我們就能直接推導出第 5 頁的二維知覺定位圖，看看東京如何在亞洲競爭城市中脫穎而出！」
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 05 -->
+      <div class="slide-script-card" data-slide="p5">
+        <div class="ssc-head">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">SLIDE 05</span>
+            <span class="ssc-title">品牌定位（P）：二維知覺定位圖（Perceptual Map）與競爭城市對決</span>
+          </div>
+          <span class="ssc-time">⏱ 建議控時：55 秒（⭐全場最高分核心頁）</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-slide-copy">
+            <strong>🖼️ 投影片畫面文稿（對應 Canva 範本圖 4：左下放二維知覺定位圖 ＋ 右側 01～04 四宮格）：</strong>
+            • <code>[01] 客群痛點雙軸（KBF）</code>：X 軸為「前衛潮流、次文化與當代設計動能（低⟷高）」；Y 軸為「百年歷史底蘊與職人生活美學（淺⟷深）」。<br>
+            • <code>[02] 左上象限強敵：京都 Kyoto</code>：千年古都歷史底蘊極深，但前衛次文化與現代潮流動能較低；加入 X 軸後東京成功拉開差距。<br>
+            • <code>[03] 右下象限強敵：首爾 ＆ 新加坡</code>：首爾現代娛樂強、新加坡商務綠建築強，但日常街巷中的百年祭典與職人歷史縱深不及東京。<br>
+            • <code>[04] 🌟 右上黃金象限霸主：東京 Tokyo</code>：唯一能「早上穿過淺草百年雷門、下午沉浸澀谷動漫潮流、晚上看麻布台大師建築」的混種之都。
+          </div>
+          <div class="ssc-speech-box">
+            <span class="ssc-speech-label">🎤 詳細上台演講逐字稿</span>
+            <div class="ssc-speech-text">
+              <p><strong>【100% 由目標客群痛點推導雙軸，正面擊敗京都與首爾】</strong><br>
+                請看第 5 頁這張二維知覺定位圖。我們完全依照前面鎖定的「20–35 歲深度自由行客群」最看重的兩個購買決策因素來設定座標軸：**橫軸（X 軸）是「前衛潮流、動漫次文化與當代設計動能」**，**縱軸（Y
+                軸）是「百年歷史文化底蘊與職人生活美學」**。</p>
+              <p>接著我們把亞洲四大競爭城市放進來比較：<br>
+                首先看**左上角象限的強敵「京都（Kyoto）」**：如果今天我們只比 Y 軸的「歷史古蹟底蘊」，東京很難贏過千年古都京都；但只要把目標客群同樣在乎的 X 軸「前衛次文化、動漫 IP
+                與當代設計動能」放進來，京都就會留在左上角！<br>
+                再看**右下角象限的「首爾（Seoul）」與「新加坡（Singapore）」**：首爾的 K-Pop 流行娛樂很強、新加坡的現代綠建築很發達，但若論日常街巷裡保存的 400
+                年江戶祭典、百年職人老舖與次文化歷史層次（Y 軸），它們的歷史縱深就明顯不如東京；而**「大阪（Osaka）」**雖然庶民美食與娛樂性強，但在當代建築設計美學與新舊反差張力上則位於中間偏右。</p>
+              <p>
+                因此，**「東京（Tokyo）」成功穩坐右上角的黃金象限**——成為全亞洲唯一能讓年輕旅客「早上在淺草穿過百年雷門與藏前職人小店、下午在澀谷秋葉原沉浸動漫與街頭潮流、晚上在麻布台之丘欣賞安藤忠雄與隈研吾建築」的時空折疊之都！
+              </p>
+            </div>
+          </div>
+          <div class="ssc-transition">
+            🔗 <strong>轉場話術：</strong>「最後，呼應老師上週分享『用雙腳與鞋子定義城市』的微觀設計觀察，如果把東京轉化為一雙鞋，它會是什麼模樣？請看最後一頁第 6 頁。」
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 06 -->
+      <div class="slide-script-card" data-slide="p6">
+        <div class="ssc-head">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">SLIDE 06</span>
+            <span class="ssc-title">視覺設計轉化：Footsteps and Urban Identity（用雙腳／鞋子定義東京靈魂）</span>
+          </div>
+          <span class="ssc-time">⏱ 建議控時：40 秒</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-slide-copy">
+            <strong>🖼️ 投影片畫面文稿（對應 Canva 範本圖 5：中央高樓照 ＋ 底部 3 張斜切平行四邊形卡）：</strong>
+            • <code>【左卡｜代表鞋款】限量版設計聯名潮鞋</code>：如果台北是商務皮鞋、台南是慢活拖鞋，東京就是一雙「融合百年藍染工藝與未來流線設計的限量聯名潮鞋」。<br>
+            • <code>【中卡｜步伐場景】石板路與斑馬線的跨越</code>：一步踏在淺草百年神社的青苔石板路上，下一步踏在澀谷十字路口的黑白斑馬線與霓虹倒影上，快節奏卻極致守序。<br>
+            • <code>【右卡｜品牌視覺色票】霧藍灰 × 江戶藍 × 東京紅</code>：以霧藍灰（現代建築秩序）、江戶深藍（百年職人底蘊）與東京緋紅（次文化能量），凝練東京獨一無二的品牌識別。
+          </div>
+          <div class="ssc-speech-box">
+            <span class="ssc-speech-label">🎤 詳細上台演講逐字稿</span>
+            <div class="ssc-speech-text">
+              <p><strong>【結尾亮點：以「限量設計聯名潮鞋」凝練東京的城市步伐】</strong><br>
+                請看第 6
+                頁。上週老師分享了用「台北的皮鞋、台南的拖鞋、台中的休閒鞋」來觀察一座城市的步伐與靈魂，給了我們很大的啟發。如果用一雙鞋來定義東京，我們認為東京絕對不是死板的黑皮鞋，而是一雙**「融合日本百年傳統藍染刺子繡工藝、與未來感流線科技鞋底的『限量版設計聯名潮鞋（Limited-Edition
+                Sneakers）』」**！</p>
+              <p>
+                穿著這雙鞋的旅人，前一步才踏在淺草百年神社安靜的青苔石板路上，下一步就能踏上澀谷十字路口節奏明快的黑白斑馬線與霓虹燈倒影上。在後續的期末視覺設計中，我們也將提取**「現代建築霧藍灰、江戶職人深藍、以及東京鐵塔次文化緋紅」**三種色彩，將這份「新舊時空折疊、忙碌卻極致有序」的城市靈魂轉化為完整的視覺系統。以上是我們第
+                20 組的報告，謝謝老師與各位同學！</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professor Q&A Defense -->
+      <div class="slide-script-card" data-slide="qa">
+        <div class="ssc-head" style="background: linear-gradient(135deg, #9F1239, #BE123C);">
+          <div class="ssc-head-left">
+            <span class="ssc-page-num">Q&A DEFENSE</span>
+            <span class="ssc-title">🛡️ 老師現場拷問 Q&A 防禦必勝題庫（預判 4 大必考提問）</span>
+          </div>
+          <span class="ssc-time">上台前必讀防身</span>
+        </div>
+        <div class="ssc-content">
+          <div class="ssc-qa-box">
+            <strong>❓ 預判拷問 1：「你們很熟東京嗎？剛剛講的淺草藏前、澀谷秋葉原、麻布台之丘，分別要搭什麼地鐵或電車線？」</strong><br>
+            <span style="color:#1E293B; display:block; margin-top:4px;">
+              💡 <strong>防禦標準答案（避免像第 13 組台北被問倒）：</strong><br>
+              • <strong>澀谷 ⟷ 原宿 ⟷ 秋葉原</strong>：全部都在東京最核心的環狀線<strong>「JR 山手線（Yamanote
+                Line）」</strong>與東京Metro<strong>「銀座線（Ginza Line）」</strong>上！<br>
+              • <strong>淺草・藏前</strong>：搭乘東京Metro<strong>「銀座線」</strong>或都營地鐵<strong>「淺草線（Asakusa
+                Line）」</strong>直達（淺草站與藏前站僅相隔一站，步行 10 分鐘即可從雷門走到藏前職人街區）。<br>
+              • <strong>六本木・麻布台之丘</strong>：搭乘東京Metro<strong>「日比谷線（Hibiya Line，神谷町站 5
+                號出口直通）」</strong>或<strong>「南北線（六本木一丁目站）」</strong>。這三大區域在 30 分鐘地鐵圈內完全串聯！
+            </span>
+          </div>
+
+          <div class="ssc-qa-box">
+            <strong>❓ 預判拷問 2：「東京這麼大，為什麼你們不單純只做『淺草』或只做『澀谷』一個區就好？」</strong><br>
+            <span style="color:#1E293B; display:block; margin-top:4px;">
+              💡 <strong>防禦標準答案：</strong><br>
+              「報告老師，我們討論時發現，如果只單做『淺草』，放在定位圖上跟**京都**比歷史古蹟會完全輸給京都；如果只單做『澀谷』，又只剩下現代商業流行，沒辦法體現東京最獨特的『新舊反差張力』。東京之所以在國際城市品牌中無可取代，正是因為它能透過高密度地鐵網，在
+              20 分鐘內讓旅客從 400 年江戶下町瞬間切換到世界最前衛的動漫與當代建築，所以我們以『東京』為母體，但精準收斂在這條『新舊時空折疊走廊』。」
+            </span>
+          </div>
+
+          <div class="ssc-qa-box">
+            <strong>❓ 預判拷問 3：「你們定位圖為什麼選『前衛潮流次文化設計』跟『百年歷史職人底蘊』這兩個軸？」</strong><br>
+            <span style="color:#1E293B; display:block; margin-top:4px;">
+              💡 <strong>防禦標準答案：</strong><br>
+              「因為我們在前面 STP 唯一鎖定的目標客群是『20–35 歲國際深度自由行年輕世代』。這群年輕旅人出國最在乎的兩個決策痛點（KBF），就是『既想要拍到最新潮的動漫
+              IP、街頭潮流與美術館建築，又想要走進真實的百年神社老街體驗日本傳統職人文化』。用這兩個軸線去對比競品，就能清楚看出京都偏左上（傳統深但現代潮流弱）、首爾與新加坡偏右下（現代流行強但百年街區少），只有東京能穩居右上角黃金象限！」
+            </span>
+          </div>
+
+          <div class="ssc-qa-box">
+            <strong>❓ 預判拷問 4：「東京也是國際金融中心，也有迪士尼樂園，為什麼你們不把商務客跟親子客一起納進來？」</strong><br>
+            <span style="color:#1E293B; display:block; margin-top:4px;">
+              💡 <strong>防禦標準答案：</strong><br>
+              「這正是遵循老師課堂教導我們的——做課業品牌報告不是當市長，不能貪心全包！如果把丸之內金融商務客或迪士尼親子客也塞進來，後面的品牌個性、定位圖座標軸跟期末的視覺設計就會完全失焦，所以我們在市場區隔（S）先列出它們，但在目標市場（T）集中火力只鎖定
+              20–35 歲文化潮流深度自由行客群。」
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
   <footer>
     <p>11/11 品牌課堂錄音全解析 ＆ 東京（Tokyo）城市品牌行銷 STP 高分策略網站｜自動生成自 <code>11-11課堂錄音 - 複製.aac</code></p>
   </footer>
@@ -1781,9 +2513,53 @@
       });
     }
 
+    // 簡報文稿與詳細講稿側邊抽屜控制
+    function toggleScriptDrawer(forceState) {
+      const drawer = document.getElementById('scriptDrawer');
+      const backdrop = document.getElementById('scriptBackdrop');
+      const navBtn = document.getElementById('navScriptBtn');
+      const isOpen = typeof forceState === 'boolean' ? forceState : !drawer.classList.contains('open');
+
+      drawer.classList.toggle('open', isOpen);
+      backdrop.classList.toggle('open', isOpen);
+      if (navBtn) navBtn.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    function filterScriptSlide(slideKey, tabEl) {
+      document.querySelectorAll('#sdTabsBar .sd-tab').forEach(btn => btn.classList.remove('active'));
+      if (tabEl) tabEl.classList.add('active');
+
+      const cards = document.querySelectorAll('#sdBody .slide-script-card');
+      cards.forEach(card => {
+        const key = card.getAttribute('data-slide');
+        card.style.display = (slideKey === 'all' || key === slideKey) ? 'block' : 'none';
+      });
+    }
+
+    function copyFullScript() {
+      const cards = Array.from(document.querySelectorAll('#sdBody .slide-script-card'));
+      const fullText = cards.map(c => c.innerText.trim()).join('\n\n----------------------------------------\n\n');
+      navigator.clipboard.writeText(fullText).then(() => {
+        const btn = document.getElementById('copyAllScriptBtn');
+     orig = btn.textContent;
+        btn.textContent = '✅ 已複製全篇講稿！';
+        setTimeout(() => { btn.textContent = orig; }, 2000);
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'Escape') {
+        toggleScriptDrawer(false);
+      } else if (e.key === 'p' || e.key === 'P') {
+        toggleScriptDrawer();
+      }
+    });
+
     // 區域滑動連動提示 (ScrollSpy) 與欄位切換深色高亮
     (function initScrollSpy() {
-      const navLinks = Array.from(document.querySelectorAll('#topNavLinks .nav-link'));
+      const navLinks = Array.from(document.querySelectorAll('#topNavLinks a.nav-link[data-section]'));
       const sectionIds = navLinks.map(link => link.getAttribute('data-section'));
       const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
       const hintEl = document.getElementById('currentSectionHint');
@@ -1843,4 +2619,5 @@
     })();
   </script>
 </body>
+
 </html>
